@@ -17,7 +17,7 @@ from flow.controllers import SimLaneChangeController
 from flow.networks import Network
 import os
 
-from env_testV1 import myEnv
+from env_testV2 import myEnv
 
 ADDITIONAL_ENV_PARAMS = {
     "max_accel": 1,
@@ -47,7 +47,6 @@ vehicles.add(
     routing_controller=(ContinuousRouter, {}),
     num_vehicles=1)
 
-file_dir = '/home/llavezzo/'
 
 # specify the edges vehicles can originate on
 initial_config = InitialConfig(
@@ -77,8 +76,9 @@ inflow.add(veh_type="human",
             depart_speed="random",
             color="blue")
 
+file_dir = "/home/llavezzo/"
 net_params = NetParams(
-    template=os.path.join(file_dir, "constructionV2.net.xml"),
+    template="/mnt/c/Users/llave/Documents/GitHub/flow_osuphysics/lucalavezzo/constructionV2.net.xml",
     inflows=inflow
 )
 
@@ -117,9 +117,7 @@ flow_params = dict(
 
     # network-related parameters (see flow.core.params.NetParams and the
     # network's documentation or ADDITIONAL_NET_PARAMS component)
-    net=NetParams(
-        additional_params=ADDITIONAL_NET_PARAMS.copy()
-    ),
+    net=net_params,
 
     # vehicles to be placed in the network at the start of a rollout (see
     # flow.core.params.VehicleParams)
@@ -127,9 +125,7 @@ flow_params = dict(
 
     # parameters specifying the positioning of vehicles upon initialization/
     # reset (see flow.core.params.InitialConfig)
-    initial=InitialConfig(
-        bunching=20,
-    ),
+    initial=initial_config
 )
 
 
