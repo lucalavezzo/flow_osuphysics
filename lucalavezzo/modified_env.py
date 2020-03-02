@@ -36,9 +36,9 @@ class myEnv(Env):
     @property
     def observation_space(self):
         return Box(
-            low=float(-1000000000),
+            low=-1000000000000,
             high=float("inf"),
-            shape=(2*self.k.vehicle.num_vehicles,),
+            shape=(2*self.initial_vehicles.num_vehicles,),
         )
 
     def _apply_rl_actions(self, rl_actions):

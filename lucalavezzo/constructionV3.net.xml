@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Mon Mar  2 10:53:38 2020 by Eclipse SUMO netedit Version v1_1_0+0000-2147d155b1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="constructionV3.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="constructionV3.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+</configuration>
+-->
+
+<net version="1.1" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="-492.14,-228.91,550.57,48.24" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+
+    <edge id=":gneJ10_0" function="internal">
+        <lane id=":gneJ10_0_0" index="0" speed="3.91" length="2.52" shape="533.65,32.27 534.33,32.16 534.82,31.87 535.12,31.38 535.23,30.70"/>
+    </edge>
+    <edge id=":gneJ10_1" function="internal">
+        <lane id=":gneJ10_1_0" index="0" speed="6.08" length="7.56" shape="533.69,35.47 535.73,35.15 537.20,34.26 538.10,32.80 538.43,30.76"/>
+    </edge>
+    <edge id=":gneJ10_2" function="internal">
+        <lane id=":gneJ10_2_0" index="0" speed="7.66" length="12.60" shape="533.74,38.67 537.13,38.14 539.58,36.65 541.08,34.21 541.63,30.82"/>
+    </edge>
+    <edge id=":gneJ10_3" function="internal">
+        <lane id=":gneJ10_3_0" index="0" speed="8.97" length="17.64" shape="533.78,41.87 538.54,41.13 541.96,39.05 544.06,35.63 544.83,30.88"/>
+    </edge>
+    <edge id=":gneJ12_0" function="internal">
+        <lane id=":gneJ12_0_0" index="0" speed="3.90" length="2.58" shape="-399.05,41.02 -398.36,40.93 -397.85,40.63 -397.55,40.13 -397.45,39.43"/>
+    </edge>
+    <edge id=":gneJ12_1" function="internal">
+        <lane id=":gneJ12_1_0" index="0" speed="6.08" length="7.73" shape="-399.06,44.22 -396.96,43.93 -395.46,43.04 -394.56,41.54 -394.25,39.44"/>
+    </edge>
+    <edge id=":gneJ12_2" function="internal">
+        <lane id=":gneJ12_2_0" index="0" speed="7.66" length="12.89" shape="-399.07,47.42 -395.57,46.93 -393.07,45.44 -391.56,42.95 -391.05,39.46"/>
+    </edge>
+    <edge id=":gneJ13_0" function="internal">
+        <lane id=":gneJ13_0_0" index="0" speed="7.66" length="12.89" shape="-396.86,-103.37 -396.35,-106.87 -394.84,-109.36 -392.33,-110.85 -388.84,-111.34"/>
+    </edge>
+    <edge id=":gneJ13_1" function="internal">
+        <lane id=":gneJ13_1_0" index="0" speed="6.08" length="7.73" shape="-393.66,-103.36 -393.35,-105.46 -392.45,-106.95 -390.94,-107.85 -388.85,-108.14"/>
+    </edge>
+    <edge id=":gneJ13_2" function="internal">
+        <lane id=":gneJ13_2_0" index="0" speed="3.90" length="2.58" shape="-390.46,-103.35 -390.36,-104.05 -390.06,-104.54 -389.55,-104.84 -388.86,-104.94"/>
+    </edge>
+    <edge id=":gneJ14_0" function="internal">
+        <lane id=":gneJ14_0_0" index="0" speed="13.89" length="17.76" shape="-210.02,-116.27 -210.40,-98.40"/>
+        <lane id=":gneJ14_0_1" index="1" speed="13.89" length="17.76" shape="-213.22,-116.32 -213.60,-98.53"/>
+        <lane id=":gneJ14_0_2" index="2" speed="13.89" length="17.76" shape="-216.42,-116.37 -216.80,-98.66"/>
+        <lane id=":gneJ14_0_3" index="3" speed="13.89" length="17.76" shape="-219.62,-116.42 -219.99,-98.79"/>
+    </edge>
+    <edge id=":gneJ14_4" function="internal">
+        <lane id=":gneJ14_4_0" index="0" speed="9.20" length="19.64" shape="-225.41,-110.86 -220.05,-110.08 -216.30,-107.76 -214.15,-103.91 -213.60,-98.53"/>
+    </edge>
+    <edge id=":gneJ14_5" function="internal">
+        <lane id=":gneJ14_5_0" index="0" speed="7.93" length="14.34" shape="-225.42,-107.66 -221.51,-107.09 -218.77,-105.40 -217.20,-102.59 -216.80,-98.66"/>
+    </edge>
+    <edge id=":gneJ14_6" function="internal">
+        <lane id=":gneJ14_6_0" index="0" speed="6.43" length="9.03" shape="-225.43,-104.46 -222.96,-104.10 -221.24,-103.04 -220.25,-101.26 -219.99,-98.79"/>
+    </edge>
+    <edge id=":gneJ16_0" function="internal">
+        <lane id=":gneJ16_0_0" index="0" speed="3.90" length="2.65" shape="-215.92,38.26 -215.85,38.99 -215.56,39.51 -215.05,39.82 -214.33,39.93"/>
+    </edge>
+    <edge id=":gneJ16_1" function="internal">
+        <lane id=":gneJ16_1_0" index="0" speed="6.07" length="7.95" shape="-219.12,38.13 -218.90,40.31 -218.02,41.87 -216.50,42.81 -214.34,43.13"/>
+    </edge>
+    <edge id=":gneJ16_2" function="internal">
+        <lane id=":gneJ16_2_0" index="0" speed="7.65" length="13.26" shape="-222.32,38.00 -221.94,41.64 -220.49,44.23 -217.96,45.80 -214.34,46.33"/>
+    </edge>
+    <edge id=":gneJ16_3" function="internal">
+        <lane id=":gneJ16_3_0" index="0" speed="8.96" length="18.56" shape="-225.51,37.87 -224.99,42.96 -222.96,46.60 -219.41,48.79 -214.35,49.53"/>
+    </edge>
+    <edge id=":gneJ18_0" function="internal">
+        <lane id=":gneJ18_0_0" index="0" speed="3.91" length="2.55" shape="-207.51,-175.26 -208.20,-175.17 -208.70,-174.87 -209.00,-174.38 -209.11,-173.69"/>
+    </edge>
+    <edge id=":gneJ18_1" function="internal">
+        <lane id=":gneJ18_1_0" index="0" speed="6.08" length="7.65" shape="-207.51,-178.46 -209.58,-178.17 -211.07,-177.28 -211.98,-175.81 -212.31,-173.74"/>
+    </edge>
+    <edge id=":gneJ18_2" function="internal">
+        <lane id=":gneJ18_2_0" index="0" speed="7.66" length="12.75" shape="-207.51,-181.66 -210.96,-181.17 -213.45,-179.69 -214.96,-177.23 -215.51,-173.79"/>
+    </edge>
+    <edge id=":gneJ18_3" function="internal">
+        <lane id=":gneJ18_3_0" index="0" speed="8.96" length="17.85" shape="-207.51,-184.86 -212.35,-184.17 -215.82,-182.11 -217.94,-178.66 -218.71,-173.84"/>
+    </edge>
+    <edge id=":gneJ29_0" function="internal">
+        <lane id=":gneJ29_0_0" index="0" speed="6.47" length="9.03" shape="539.05,-169.89 538.74,-172.35 537.72,-174.11 535.98,-175.16 533.52,-175.51"/>
+    </edge>
+    <edge id=":gneJ29_1" function="internal">
+        <lane id=":gneJ29_1_0" index="0" speed="7.97" length="14.27" shape="542.25,-169.82 541.77,-173.72 540.15,-176.49 537.40,-178.16 533.52,-178.71"/>
+    </edge>
+    <edge id=":gneJ29_2" function="internal">
+        <lane id=":gneJ29_2_0" index="0" speed="9.23" length="19.50" shape="545.45,-169.76 544.79,-175.08 542.58,-178.88 538.83,-181.16 533.52,-181.91"/>
+    </edge>
+    <edge id=":gneJ29_3" function="internal">
+        <lane id=":gneJ29_3_0" index="0" speed="10.33" length="24.73" shape="548.65,-169.70 547.81,-176.45 545.01,-181.26 540.25,-184.15 533.52,-185.11"/>
+    </edge>
+    <edge id=":gneJ6_0" function="internal">
+        <lane id=":gneJ6_0_0" index="0" speed="7.42" length="12.05" shape="22.70,31.28 23.05,35.29 24.10,38.16 25.85,39.88 28.30,40.46"/>
+    </edge>
+    <edge id=":gneJ6_1" function="internal">
+        <lane id=":gneJ6_1_0" index="0" speed="8.19" length="14.90" shape="22.70,31.28 23.05,36.69 24.10,40.56 25.85,42.88 28.29,43.66"/>
+    </edge>
+    <edge id=":gneJ6_2" function="internal">
+        <lane id=":gneJ6_2_0" index="0" speed="13.89" length="12.88" shape="15.30,37.35 19.20,37.61 21.79,38.70 24.38,39.89 28.30,40.46"/>
+        <lane id=":gneJ6_2_1" index="1" speed="13.89" length="12.88" shape="15.55,40.54 28.30,40.46"/>
+        <lane id=":gneJ6_2_2" index="2" speed="13.89" length="12.88" shape="15.81,43.72 28.29,43.66"/>
+        <lane id=":gneJ6_2_3" index="3" speed="13.89" length="12.88" shape="16.06,46.91 19.74,46.19 22.17,45.10 24.60,44.09 28.29,43.66"/>
+    </edge>
+    <edge id=":gneJ7_0" function="internal">
+        <lane id=":gneJ7_0_0" index="0" speed="3.90" length="2.58" shape="24.30,13.85 23.60,13.94 23.10,14.24 22.80,14.74 22.70,15.45"/>
+    </edge>
+    <edge id=":gneJ8_0" function="internal">
+        <lane id=":gneJ8_0_0" index="0" speed="3.90" length="2.57" shape="172.75,15.67 172.65,14.97 172.35,14.47 171.85,14.18 171.16,14.08"/>
+    </edge>
+    <edge id=":gneJ9_0" function="internal">
+        <lane id=":gneJ9_0_0" index="0" speed="7.37" length="11.91" shape="167.25,40.55 169.70,39.99 171.45,38.30 172.49,35.48 172.82,31.54"/>
+    </edge>
+    <edge id=":gneJ9_1" function="internal">
+        <lane id=":gneJ9_1_0" index="0" speed="13.89" length="14.03" shape="167.25,40.55 171.39,40.02 174.11,38.84 176.83,37.63 180.97,37.04"/>
+        <lane id=":gneJ9_1_1" index="1" speed="13.89" length="14.03" shape="167.25,40.55 181.01,40.24"/>
+    </edge>
+    <edge id=":gneJ9_3" function="internal">
+        <lane id=":gneJ9_3_0" index="0" speed="8.14" length="3.72" shape="167.25,43.75 169.71,42.99 170.40,42.08"/>
+    </edge>
+    <edge id=":gneJ9_4" function="internal">
+        <lane id=":gneJ9_4_0" index="0" speed="13.89" length="14.03" shape="167.25,43.75 181.06,43.44"/>
+        <lane id=":gneJ9_4_1" index="1" speed="13.89" length="14.03" shape="167.25,43.75 171.40,44.22 174.17,45.24 176.95,46.23 181.10,46.64"/>
+    </edge>
+    <edge id=":gneJ9_6" function="internal">
+        <lane id=":gneJ9_6_0" index="0" speed="8.14" length="11.05" shape="170.40,42.08 171.45,40.70 172.49,36.88 172.82,31.54"/>
+    </edge>
+
+    <edge id="gneE11" from="gneJ13" to="gneJ14" priority="-1">
+        <lane id="gneE11_0" index="0" speed="13.89" length="163.43" shape="-388.84,-111.34 -225.41,-110.86"/>
+        <lane id="gneE11_1" index="1" speed="13.89" length="163.43" shape="-388.85,-108.14 -225.42,-107.66"/>
+        <lane id="gneE11_2" index="2" speed="13.89" length="163.43" shape="-388.86,-104.94 -225.43,-104.46"/>
+    </edge>
+    <edge id="gneE13" from="gneJ14" to="gneJ16" priority="-1">
+        <lane id="gneE13_0" index="0" speed="13.89" length="136.77" shape="-210.40,-98.40 -215.92,38.26"/>
+        <lane id="gneE13_1" index="1" speed="13.89" length="136.77" shape="-213.60,-98.53 -219.12,38.13"/>
+        <lane id="gneE13_2" index="2" speed="13.89" length="136.77" shape="-216.80,-98.66 -222.32,38.00"/>
+        <lane id="gneE13_3" index="3" speed="13.89" length="136.77" shape="-219.99,-98.79 -225.51,37.87"/>
+    </edge>
+    <edge id="gneE15" from="gneJ18" to="gneJ14" priority="-1">
+        <lane id="gneE15_0" index="0" speed="13.89" length="57.42" shape="-209.11,-173.69 -210.02,-116.27"/>
+        <lane id="gneE15_1" index="1" speed="13.89" length="57.42" shape="-212.31,-173.74 -213.22,-116.32"/>
+        <lane id="gneE15_2" index="2" speed="13.89" length="57.42" shape="-215.51,-173.79 -216.42,-116.37"/>
+        <lane id="gneE15_3" index="3" speed="13.89" length="57.42" shape="-218.71,-173.84 -219.62,-116.42"/>
+    </edge>
+    <edge id="gneE17" from="gneJ12" to="gneJ13" priority="-1">
+        <lane id="gneE17_0" index="0" speed="13.89" length="142.80" shape="-397.45,39.43 -396.86,-103.37"/>
+        <lane id="gneE17_1" index="1" speed="13.89" length="142.80" shape="-394.25,39.44 -393.66,-103.36"/>
+        <lane id="gneE17_2" index="2" speed="13.89" length="142.80" shape="-391.05,39.46 -390.46,-103.35"/>
+    </edge>
+    <edge id="gneE33" from="gneJ10" to="gneJ29" priority="-1">
+        <lane id="gneE33_0" index="0" speed="13.89" length="200.62" shape="535.23,30.70 539.05,-169.89"/>
+        <lane id="gneE33_1" index="1" speed="13.89" length="200.62" shape="538.43,30.76 542.25,-169.82"/>
+        <lane id="gneE33_2" index="2" speed="13.89" length="200.62" shape="541.63,30.82 545.45,-169.76"/>
+        <lane id="gneE33_3" index="3" speed="13.89" length="200.62" shape="544.83,30.88 548.65,-169.70"/>
+    </edge>
+    <edge id="gneE35" from="gneJ29" to="gneJ18" priority="-1">
+        <lane id="gneE35_0" index="0" speed="13.89" length="741.03" shape="533.52,-175.51 -207.51,-175.26"/>
+        <lane id="gneE35_1" index="1" speed="13.89" length="741.03" shape="533.52,-178.71 -207.51,-178.46"/>
+        <lane id="gneE35_2" index="2" speed="13.89" length="741.03" shape="533.52,-181.91 -207.51,-181.66"/>
+        <lane id="gneE35_3" index="3" speed="13.89" length="741.03" shape="533.52,-185.11 -207.51,-184.86"/>
+    </edge>
+    <edge id="gneE36" from="gneJ29" to="gneJ28" priority="-1">
+        <lane id="gneE36_0" index="0" speed="13.89" length="23.04" shape="548.68,-190.82 547.06,-213.81"/>
+    </edge>
+    <edge id="gneE4" from="gneJ5" to="gneJ12" priority="-1" spreadType="center">
+        <lane id="gneE4_0" index="0" speed="13.89" length="93.08" shape="-492.13,40.77 -399.05,41.02"/>
+        <lane id="gneE4_1" index="1" speed="13.89" length="93.08" shape="-492.14,43.97 -399.06,44.22"/>
+        <lane id="gneE4_2" index="2" speed="13.89" length="93.08" shape="-492.15,47.17 -399.07,47.42"/>
+    </edge>
+    <edge id="gneE4.264" from="gneJ16" to="gneJ6" priority="-1" spreadType="center" shape="-227.39,44.69 -23.69,45.25 15.68,42.13">
+        <lane id="gneE4.264_0" index="0" speed="13.89" length="230.14" shape="-214.33,39.93 -23.87,40.45 15.30,37.35"/>
+        <lane id="gneE4.264_1" index="1" speed="13.89" length="230.14" shape="-214.34,43.13 -23.75,43.65 15.55,40.54"/>
+        <lane id="gneE4.264_2" index="2" speed="13.89" length="230.14" shape="-214.34,46.33 -23.63,46.85 15.81,43.72"/>
+        <lane id="gneE4.264_3" index="3" speed="13.89" length="230.14" shape="-214.35,49.53 -23.51,50.05 16.06,46.91"/>
+    </edge>
+    <edge id="gneE5" from="gneJ7" to="gneJ6" priority="-1">
+        <lane id="gneE5_0" index="0" speed="13.89" length="15.84" shape="22.70,15.45 22.70,31.28"/>
+    </edge>
+    <edge id="gneE6" from="gneJ8" to="gneJ7" priority="-1">
+        <lane id="gneE6_0" index="0" speed="13.89" length="146.85" shape="171.16,14.08 24.30,13.85"/>
+    </edge>
+    <edge id="gneE7" from="gneJ9" to="gneJ8" priority="-1">
+        <lane id="gneE7_0" index="0" speed="13.89" length="15.87" shape="172.82,31.54 172.75,15.67"/>
+    </edge>
+    <edge id="gneE8" from="gneJ6" to="gneJ9" priority="-1">
+        <lane id="gneE8_0" index="0" speed="13.89" length="138.96" shape="28.30,40.46 167.25,40.55"/>
+        <lane id="gneE8_1" index="1" speed="13.89" length="138.96" shape="28.29,43.66 167.25,43.75"/>
+    </edge>
+    <edge id="gneE9" from="gneJ9" to="gneJ10" priority="-1" shape="181.12,48.24 546.19,43.30">
+        <lane id="gneE9_0" index="0" speed="13.89" length="352.71" shape="180.97,37.04 533.65,32.27"/>
+        <lane id="gneE9_1" index="1" speed="13.89" length="352.71" shape="181.01,40.24 533.69,35.47"/>
+        <lane id="gneE9_2" index="2" speed="13.89" length="352.71" shape="181.06,43.44 533.74,38.67"/>
+        <lane id="gneE9_3" index="3" speed="13.89" length="352.71" shape="181.10,46.64 533.78,41.87"/>
+    </edge>
+
+    <junction id="gneJ10" type="priority" x="546.19" y="43.30" incLanes="gneE9_0 gneE9_1 gneE9_2 gneE9_3" intLanes=":gneJ10_0_0 :gneJ10_1_0 :gneJ10_2_0 :gneJ10_3_0" shape="546.43,30.91 533.63,30.67 533.80,43.47 537.59,43.07 540.71,42.00 543.15,40.25 544.92,37.81 546.01,34.70">
+        <request index="0" response="0000" foes="0000" cont="0"/>
+        <request index="1" response="0000" foes="0000" cont="0"/>
+        <request index="2" response="0000" foes="0000" cont="0"/>
+        <request index="3" response="0000" foes="0000" cont="0"/>
+    </junction>
+    <junction id="gneJ12" type="priority" x="-389.47" y="44.25" incLanes="gneE4_0 gneE4_1 gneE4_2" intLanes=":gneJ12_0_0 :gneJ12_1_0 :gneJ12_2_0" shape="-389.45,39.46 -399.05,39.42 -399.08,49.02 -396.15,48.77 -393.75,47.97 -391.88,46.65 -390.54,44.79 -389.73,42.39">
+        <request index="0" response="000" foes="000" cont="0"/>
+        <request index="1" response="000" foes="000" cont="0"/>
+        <request index="2" response="000" foes="000" cont="0"/>
+    </junction>
+    <junction id="gneJ13" type="priority" x="-388.86" y="-103.34" incLanes="gneE17_0 gneE17_1 gneE17_2" intLanes=":gneJ13_0_0 :gneJ13_1_0 :gneJ13_2_0" shape="-388.86,-103.34 -388.83,-112.94 -391.76,-112.68 -394.16,-111.89 -396.03,-110.56 -397.37,-108.70 -398.18,-106.31 -398.46,-103.38">
+        <request index="0" response="000" foes="000" cont="0"/>
+        <request index="1" response="000" foes="000" cont="0"/>
+        <request index="2" response="000" foes="000" cont="0"/>
+    </junction>
+    <junction id="gneJ14" type="priority" x="-221.43" y="-102.85" incLanes="gneE15_0 gneE15_1 gneE15_2 gneE15_3 gneE11_0 gneE11_1 gneE11_2" intLanes=":gneJ14_0_0 :gneJ14_0_1 :gneJ14_0_2 :gneJ14_0_3 :gneJ14_4_0 :gneJ14_5_0 :gneJ14_6_0" shape="-208.42,-116.25 -221.22,-116.45 -221.71,-114.23 -222.29,-113.45 -223.10,-112.90 -224.14,-112.57 -225.40,-112.46 -225.43,-102.86 -223.23,-102.41 -222.47,-101.85 -221.95,-101.07 -221.65,-100.07 -221.59,-98.85 -208.80,-98.34">
+        <request index="0" response="0000000" foes="1110000" cont="0"/>
+        <request index="1" response="0000000" foes="1110000" cont="0"/>
+        <request index="2" response="0000000" foes="1110000" cont="0"/>
+        <request index="3" response="0000000" foes="1110000" cont="0"/>
+        <request index="4" response="0001111" foes="0001111" cont="0"/>
+        <request index="5" response="0001111" foes="0001111" cont="0"/>
+        <request index="6" response="0001111" foes="0001111" cont="0"/>
+    </junction>
+    <junction id="gneJ16" type="priority" x="-227.39" y="44.69" incLanes="gneE13_0 gneE13_1 gneE13_2 gneE13_3" intLanes=":gneJ16_0_0 :gneJ16_1_0 :gneJ16_2_0 :gneJ16_3_0" shape="-214.36,51.13 -214.32,38.33 -227.11,37.81 -226.91,41.87 -225.93,45.19 -224.19,47.78 -221.68,49.63 -218.40,50.75">
+        <request index="0" response="0000" foes="0000" cont="0"/>
+        <request index="1" response="0000" foes="0000" cont="0"/>
+        <request index="2" response="0000" foes="0000" cont="0"/>
+        <request index="3" response="0000" foes="0000" cont="0"/>
+    </junction>
+    <junction id="gneJ18" type="priority" x="-220.11" y="-186.46" incLanes="gneE35_0 gneE35_1 gneE35_2 gneE35_3" intLanes=":gneJ18_0_0 :gneJ18_1_0 :gneJ18_2_0 :gneJ18_3_0" shape="-207.51,-173.66 -207.51,-186.46 -211.37,-186.11 -214.53,-185.06 -217.01,-183.31 -218.80,-180.86 -219.90,-177.71 -220.31,-173.87">
+        <request index="0" response="0000" foes="0000" cont="0"/>
+        <request index="1" response="0000" foes="0000" cont="0"/>
+        <request index="2" response="0000" foes="0000" cont="0"/>
+        <request index="3" response="0000" foes="0000" cont="0"/>
+    </junction>
+    <junction id="gneJ27" type="dead_end" x="-215.87" y="-228.91" incLanes="" intLanes="" shape="-215.87,-228.91"/>
+    <junction id="gneJ28" type="dead_end" x="548.66" y="-213.92" incLanes="gneE36_0" intLanes="" shape="545.47,-213.70 548.66,-213.92"/>
+    <junction id="gneJ29" type="priority" x="550.57" y="-186.72" incLanes="gneE33_0 gneE33_1 gneE33_2 gneE33_3" intLanes=":gneJ29_0_0 :gneJ29_1_0 :gneJ29_2_0 :gneJ29_3_0" shape="550.27,-190.93 547.08,-190.71 545.70,-188.49 543.83,-187.72 541.18,-187.16 537.74,-186.83 533.52,-186.71 533.52,-173.91 535.74,-173.47 536.50,-172.92 537.05,-172.14 537.36,-171.14 537.45,-169.92 550.25,-169.67 550.37,-174.20 550.51,-177.55 550.61,-180.31 550.64,-183.07 550.54,-186.41">
+        <request index="0" response="0000" foes="0000" cont="0"/>
+        <request index="1" response="0000" foes="0000" cont="0"/>
+        <request index="2" response="0000" foes="0000" cont="0"/>
+        <request index="3" response="0000" foes="0000" cont="0"/>
+    </junction>
+    <junction id="gneJ5" type="dead_end" x="-492.14" y="43.97" incLanes="" intLanes="" shape="-492.15,48.77 -492.13,39.17"/>
+    <junction id="gneJ6" type="priority" x="21.10" y="45.25" incLanes="gneE5_0 gneE4.264_0 gneE4.264_1 gneE4.264_2 gneE4.264_3" intLanes=":gneJ6_0_0 :gneJ6_1_0 :gneJ6_2_0 :gneJ6_2_1 :gneJ6_2_2 :gneJ6_2_3" shape="28.29,45.26 28.30,38.86 26.08,38.01 25.30,36.96 24.74,35.49 24.41,33.60 24.30,31.28 21.10,31.28 20.44,33.56 19.62,34.40 18.47,35.04 16.98,35.50 15.17,35.75 16.19,48.51 18.82,48.10 20.71,47.45 22.23,46.70 23.76,45.99 25.65,45.46">
+        <request index="0" response="111100" foes="111100" cont="0"/>
+        <request index="1" response="111100" foes="111100" cont="0"/>
+        <request index="2" response="001000" foes="001011" cont="0"/>
+        <request index="3" response="000000" foes="000111" cont="0"/>
+        <request index="4" response="100000" foes="100011" cont="0"/>
+        <request index="5" response="000000" foes="010011" cont="0"/>
+    </junction>
+    <junction id="gneJ7" type="priority" x="21.10" y="12.24" incLanes="gneE6_0" intLanes=":gneJ7_0_0" shape="21.10,15.45 24.30,15.45 24.31,12.25 22.52,12.60 21.90,13.04 21.46,13.67 21.19,14.47">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="gneJ8" type="priority" x="174.34" y="12.48" incLanes="gneE7_0" intLanes=":gneJ8_0_0" shape="171.15,15.68 174.35,15.66 173.99,13.89 173.55,13.27 172.93,12.83 172.13,12.56 171.16,12.48">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="gneJ9" type="priority" x="174.48" y="45.36" incLanes="gneE8_0 gneE8_1" intLanes=":gneJ9_0_0 :gneJ9_1_0 :gneJ9_1_1 :gneJ9_6_0 :gneJ9_4_0 :gneJ9_4_1" shape="181.12,48.24 180.95,35.44 177.33,35.05 176.06,34.51 175.15,33.74 174.61,32.75 174.42,31.53 171.22,31.54 171.12,33.81 170.79,35.66 170.24,37.10 169.47,38.13 168.47,38.75 167.25,38.95 167.25,45.35 170.24,45.58 172.42,46.13 174.18,46.84 175.95,47.54 178.12,48.06">
+        <request index="0" response="000000" foes="001000" cont="0"/>
+        <request index="1" response="000000" foes="001000" cont="0"/>
+        <request index="2" response="000000" foes="001000" cont="0"/>
+        <request index="3" response="000111" foes="000111" cont="1"/>
+        <request index="4" response="000000" foes="000000" cont="0"/>
+        <request index="5" response="000000" foes="000000" cont="0"/>
+    </junction>
+
+    <junction id=":gneJ9_6_0" type="internal" x="170.40" y="42.08" incLanes=":gneJ9_3_0 gneE8_0" intLanes=":gneJ9_1_0 :gneJ9_1_1"/>
+
+    <connection from="gneE11" to="gneE13" fromLane="0" toLane="1" via=":gneJ14_4_0" dir="l" state="m"/>
+    <connection from="gneE11" to="gneE13" fromLane="1" toLane="2" via=":gneJ14_5_0" dir="l" state="m"/>
+    <connection from="gneE11" to="gneE13" fromLane="2" toLane="3" via=":gneJ14_6_0" dir="l" state="m"/>
+    <connection from="gneE13" to="gneE4.264" fromLane="0" toLane="0" via=":gneJ16_0_0" dir="r" state="M"/>
+    <connection from="gneE13" to="gneE4.264" fromLane="1" toLane="1" via=":gneJ16_1_0" dir="r" state="M"/>
+    <connection from="gneE13" to="gneE4.264" fromLane="2" toLane="2" via=":gneJ16_2_0" dir="r" state="M"/>
+    <connection from="gneE13" to="gneE4.264" fromLane="3" toLane="3" via=":gneJ16_3_0" dir="r" state="M"/>
+    <connection from="gneE15" to="gneE13" fromLane="0" toLane="0" via=":gneJ14_0_0" dir="s" state="M"/>
+    <connection from="gneE15" to="gneE13" fromLane="1" toLane="1" via=":gneJ14_0_1" dir="s" state="M"/>
+    <connection from="gneE15" to="gneE13" fromLane="2" toLane="2" via=":gneJ14_0_2" dir="s" state="M"/>
+    <connection from="gneE15" to="gneE13" fromLane="3" toLane="3" via=":gneJ14_0_3" dir="s" state="M"/>
+    <connection from="gneE17" to="gneE11" fromLane="0" toLane="0" via=":gneJ13_0_0" dir="l" state="M"/>
+    <connection from="gneE17" to="gneE11" fromLane="1" toLane="1" via=":gneJ13_1_0" dir="l" state="M"/>
+    <connection from="gneE17" to="gneE11" fromLane="2" toLane="2" via=":gneJ13_2_0" dir="l" state="M"/>
+    <connection from="gneE33" to="gneE35" fromLane="0" toLane="0" via=":gneJ29_0_0" dir="r" state="M"/>
+    <connection from="gneE33" to="gneE35" fromLane="1" toLane="1" via=":gneJ29_1_0" dir="r" state="M"/>
+    <connection from="gneE33" to="gneE35" fromLane="2" toLane="2" via=":gneJ29_2_0" dir="r" state="M"/>
+    <connection from="gneE33" to="gneE35" fromLane="3" toLane="3" via=":gneJ29_3_0" dir="r" state="M"/>
+    <connection from="gneE35" to="gneE15" fromLane="0" toLane="0" via=":gneJ18_0_0" dir="r" state="M"/>
+    <connection from="gneE35" to="gneE15" fromLane="1" toLane="1" via=":gneJ18_1_0" dir="r" state="M"/>
+    <connection from="gneE35" to="gneE15" fromLane="2" toLane="2" via=":gneJ18_2_0" dir="r" state="M"/>
+    <connection from="gneE35" to="gneE15" fromLane="3" toLane="3" via=":gneJ18_3_0" dir="r" state="M"/>
+    <connection from="gneE4" to="gneE17" fromLane="0" toLane="0" via=":gneJ12_0_0" dir="r" state="M"/>
+    <connection from="gneE4" to="gneE17" fromLane="1" toLane="1" via=":gneJ12_1_0" dir="r" state="M"/>
+    <connection from="gneE4" to="gneE17" fromLane="2" toLane="2" via=":gneJ12_2_0" dir="r" state="M"/>
+    <connection from="gneE4.264" to="gneE8" fromLane="0" toLane="0" via=":gneJ6_2_0" dir="s" state="m"/>
+    <connection from="gneE4.264" to="gneE8" fromLane="1" toLane="0" via=":gneJ6_2_1" dir="s" state="M"/>
+    <connection from="gneE4.264" to="gneE8" fromLane="2" toLane="1" via=":gneJ6_2_2" dir="s" state="m"/>
+    <connection from="gneE4.264" to="gneE8" fromLane="3" toLane="1" via=":gneJ6_2_3" dir="s" state="M"/>
+    <connection from="gneE5" to="gneE8" fromLane="0" toLane="0" via=":gneJ6_0_0" dir="r" state="m"/>
+    <connection from="gneE5" to="gneE8" fromLane="0" toLane="1" via=":gneJ6_1_0" dir="r" state="m"/>
+    <connection from="gneE6" to="gneE5" fromLane="0" toLane="0" via=":gneJ7_0_0" dir="r" state="M"/>
+    <connection from="gneE7" to="gneE6" fromLane="0" toLane="0" via=":gneJ8_0_0" dir="r" state="M"/>
+    <connection from="gneE8" to="gneE7" fromLane="0" toLane="0" via=":gneJ9_0_0" dir="r" state="M"/>
+    <connection from="gneE8" to="gneE9" fromLane="0" toLane="0" via=":gneJ9_1_0" dir="s" state="M"/>
+    <connection from="gneE8" to="gneE9" fromLane="0" toLane="1" via=":gneJ9_1_1" dir="s" state="M"/>
+    <connection from="gneE8" to="gneE7" fromLane="1" toLane="0" via=":gneJ9_3_0" dir="r" state="m"/>
+    <connection from="gneE8" to="gneE9" fromLane="1" toLane="2" via=":gneJ9_4_0" dir="s" state="M"/>
+    <connection from="gneE8" to="gneE9" fromLane="1" toLane="3" via=":gneJ9_4_1" dir="s" state="M"/>
+    <connection from="gneE9" to="gneE33" fromLane="0" toLane="0" via=":gneJ10_0_0" dir="r" state="M"/>
+    <connection from="gneE9" to="gneE33" fromLane="1" toLane="1" via=":gneJ10_1_0" dir="r" state="M"/>
+    <connection from="gneE9" to="gneE33" fromLane="2" toLane="2" via=":gneJ10_2_0" dir="r" state="M"/>
+    <connection from="gneE9" to="gneE33" fromLane="3" toLane="3" via=":gneJ10_3_0" dir="r" state="M"/>
+
+    <connection from=":gneJ10_0" to="gneE33" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":gneJ10_1" to="gneE33" fromLane="0" toLane="1" dir="r" state="M"/>
+    <connection from=":gneJ10_2" to="gneE33" fromLane="0" toLane="2" dir="r" state="M"/>
+    <connection from=":gneJ10_3" to="gneE33" fromLane="0" toLane="3" dir="r" state="M"/>
+    <connection from=":gneJ12_0" to="gneE17" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":gneJ12_1" to="gneE17" fromLane="0" toLane="1" dir="r" state="M"/>
+    <connection from=":gneJ12_2" to="gneE17" fromLane="0" toLane="2" dir="r" state="M"/>
+    <connection from=":gneJ13_0" to="gneE11" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":gneJ13_1" to="gneE11" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":gneJ13_2" to="gneE11" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":gneJ14_0" to="gneE13" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":gneJ14_0" to="gneE13" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":gneJ14_0" to="gneE13" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":gneJ14_0" to="gneE13" fromLane="3" toLane="3" dir="s" state="M"/>
+    <connection from=":gneJ14_4" to="gneE13" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":gneJ14_5" to="gneE13" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":gneJ14_6" to="gneE13" fromLane="0" toLane="3" dir="l" state="M"/>
+    <connection from=":gneJ16_0" to="gneE4.264" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":gneJ16_1" to="gneE4.264" fromLane="0" toLane="1" dir="r" state="M"/>
+    <connection from=":gneJ16_2" to="gneE4.264" fromLane="0" toLane="2" dir="r" state="M"/>
+    <connection from=":gneJ16_3" to="gneE4.264" fromLane="0" toLane="3" dir="r" state="M"/>
+    <connection from=":gneJ18_0" to="gneE15" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":gneJ18_1" to="gneE15" fromLane="0" toLane="1" dir="r" state="M"/>
+    <connection from=":gneJ18_2" to="gneE15" fromLane="0" toLane="2" dir="r" state="M"/>
+    <connection from=":gneJ18_3" to="gneE15" fromLane="0" toLane="3" dir="r" state="M"/>
+    <connection from=":gneJ29_0" to="gneE35" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":gneJ29_1" to="gneE35" fromLane="0" toLane="1" dir="r" state="M"/>
+    <connection from=":gneJ29_2" to="gneE35" fromLane="0" toLane="2" dir="r" state="M"/>
+    <connection from=":gneJ29_3" to="gneE35" fromLane="0" toLane="3" dir="r" state="M"/>
+    <connection from=":gneJ6_0" to="gneE8" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":gneJ6_1" to="gneE8" fromLane="0" toLane="1" dir="r" state="M"/>
+    <connection from=":gneJ6_2" to="gneE8" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":gneJ6_2" to="gneE8" fromLane="1" toLane="0" dir="s" state="M"/>
+    <connection from=":gneJ6_2" to="gneE8" fromLane="2" toLane="1" dir="s" state="M"/>
+    <connection from=":gneJ6_2" to="gneE8" fromLane="3" toLane="1" dir="s" state="M"/>
+    <connection from=":gneJ7_0" to="gneE5" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":gneJ8_0" to="gneE6" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":gneJ9_0" to="gneE7" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":gneJ9_1" to="gneE9" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":gneJ9_1" to="gneE9" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":gneJ9_3" to="gneE7" fromLane="0" toLane="0" via=":gneJ9_6_0" dir="r" state="m"/>
+    <connection from=":gneJ9_6" to="gneE7" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":gneJ9_4" to="gneE9" fromLane="0" toLane="2" dir="s" state="M"/>
+    <connection from=":gneJ9_4" to="gneE9" fromLane="1" toLane="3" dir="s" state="M"/>
+
+</net>
