@@ -36,7 +36,7 @@ class myEnv(Env):
     @property
     def observation_space(self):
         return Box(
-            low=0,
+            low=-float("inf"),
             high=float("inf"),
             shape=(2*self.initial_vehicles.num_vehicles,),
         )
