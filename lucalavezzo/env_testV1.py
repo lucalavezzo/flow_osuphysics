@@ -36,9 +36,11 @@ class myEnv(Env):
     @property
     def observation_space(self):
         return Box(
-            low=-float("inf"),
-            high=float("inf"),
-            shape=(2*self.initial_vehicles.num_vehicles,),
+            low=-np.inf,
+            high=np.inf,
+            #shape=(2*self.initial_vehicles.num_vehicles,),
+            shape=(2*1000,),
+            dtype=np.int64
         )
 
     def _apply_rl_actions(self, rl_actions):
@@ -59,7 +61,14 @@ class myEnv(Env):
         vel = [self.k.vehicle.get_speed(veh_id) for veh_id in ids]
 
         # the speeds and positions are concatenated to produce the state
-        return np.concatenate((pos, vel))
+        len_zeros = 2000-len(np.concatenate((pos,vel)))
+        zeros = np.zeros(len_zeros)
+
+        test = np.concatenate((pos, vel,zeros))
+        print("TESTING",test.shape,np.min(test),np.max(test))
+        print("observation_space", self.observation_space)
+
+        return np.concatenate((pos,vel,zeros))
 
     def compute_reward(self, rl_actions, **kwargs):
         # the get_ids() method is used to get the names of all vehicles in the network
