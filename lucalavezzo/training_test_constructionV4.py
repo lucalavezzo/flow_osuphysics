@@ -19,21 +19,20 @@ import os
 from flow.controllers.routing_controllers import ConstructionRouter
 from flow.core.params import SumoLaneChangeParams
 
-from env_testV2 import myEnv
+from env_constructionV4_padding import myEnv
 
 ADDITIONAL_ENV_PARAMS = {
-    "max_accel": 1,
-    "max_decel": 1,
+    "max_accel": 2,
+    "max_decel": 2,
 }
 
 # time horizon of a single rollout
-HORIZON = 1500
+HORIZON = 2000
 # number of rollouts per training iteration
 N_ROLLOUTS = 20
 # number of parallel workers
 N_CPUS = 2
 
-# We place one autonomous vehicle and 22 human-driven vehicles in the network
 vehicles = VehicleParams()
 vehicles.add("rl",
              acceleration_controller=(RLController, {}),
@@ -41,7 +40,6 @@ vehicles.add("rl",
              routing_controller=(ConstructionRouter, {}),
              car_following_params=SumoCarFollowingParams(
                  speed_mode="obey_safe_speed",  
-                 # we use the speed mode "obey_safe_speed" for better dynamics at the merge
              ),
              num_vehicles=2)
 vehicles.add("human",
@@ -50,7 +48,6 @@ vehicles.add("human",
              #routing_controller=(ContinuousRouter, {}),
              car_following_params=SumoCarFollowingParams(
                  speed_mode="obey_safe_speed",  
-                 # we use the speed mode "obey_safe_speed" for better dynamics at the merge
              ),
              lane_change_params = SumoLaneChangeParams(lane_change_mode="strategic",lcpushy=1.0),
              num_vehicles=0)
@@ -80,7 +77,7 @@ inflow.add(veh_type="human",
             color="white")
 inflow.add(veh_type="human",
            edge="gneE35",
-           vehs_per_hour=5000,
+           vehs_per_hour=3000,
             depart_lane="random",
             depart_speed="random",
             color="blue")
@@ -109,20 +106,19 @@ flow_params = dict(
     sim=SumoParams(
         sim_step=0.1,
         render=False,
-        restart_instance=True,
-        rint_warnings=False,
+        restart_instance=True
     ),
 
     # environment related parameters (see flow.core.params.EnvParams)
     env=EnvParams(
         horizon=HORIZON,
-        warmup_steps=750,
+        warmup_steps=1000,
         clip_actions=False,
         additional_params={
-            "target_velocity": 20,
+            "target_velocity": 40,
             "sort_vehicles": False,
-            "max_accel": 1,
-            "max_decel": 1,
+            "max_accel": 2,
+            "max_decel": 2,
         },
     ),
 
@@ -159,7 +155,7 @@ def setup_exps():
     config["num_workers"] = N_CPUS
     config["train_batch_size"] = HORIZON * N_ROLLOUTS
     config["gamma"] = 0.999  # discount rate
-    config["model"].update({"fcnet_hiddens": [3, 3]})
+    config["model"].update({"fcnet_hiddens": [16, 16]})
     config["use_gae"] = True
     config["lambda"] = 0.97
     config["kl_target"] = 0.02
@@ -188,7 +184,7 @@ trials = run_experiments({
         "config": {
             **config
         },
-        "checkpoint_freq": 20,
+        "checkpoint_freq": 5,
         "checkpoint_at_end": True,
         "max_failures": 999,
         "stop": {

@@ -73,24 +73,25 @@ inflow = InFlows()
 #highway vehicles
 inflow.add(veh_type="human",
            edge="gneE6",
-           vehs_per_hour=5000,
+           vehs_per_hour=1500,
             depart_lane="random",
-            depart_speed="random",
+            depart_speed=10,
             color="white")
-
-#merging vehicles
-inflow.add(veh_type="rl",
-           edge="gneE7",
-           vehs_per_hour=1000,
-            depart_lane="random",
-            depart_speed="random",
-            color="blue")
 inflow.add(veh_type="rl",
            edge="gneE7",
            vehs_per_hour=500,
             depart_lane="random",
-            depart_speed="random",
+            depart_speed=10,
             color="red")
+
+#merging vehicles
+inflow.add(veh_type="rl",
+           edge="gneE7",
+           vehs_per_hour=100,
+            depart_lane="random",
+            depart_speed=8,
+            color="blue")
+
 
 
 fileDir='/mnt/c/Users/llave/Documents/GitHub/flow_osuphysics/lucalavezzo/merge.net.xml'

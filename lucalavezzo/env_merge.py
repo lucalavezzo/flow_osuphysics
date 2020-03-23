@@ -17,8 +17,9 @@ from gym.spaces import Tuple
 from flow.envs import Env
 
 ADDITIONAL_ENV_PARAMS = {
-    "max_accel": 1,
-    "max_decel": 1,
+    "max_accel": 5,
+    "max_decel": 5,
+    "target_velocity": 25,
 }
 
 class myEnv(Env):

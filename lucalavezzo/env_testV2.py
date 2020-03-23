@@ -17,8 +17,8 @@ from gym.spaces import Tuple
 from flow.envs import Env
 
 ADDITIONAL_ENV_PARAMS = {
-    "max_accel": 2,
-    "max_decel": 2,
+    "max_accel": 1,
+    "max_decel": 1,
 }
 
 class myEnv(Env):
@@ -75,6 +75,12 @@ class myEnv(Env):
                     vel2.append(v/max_speed)
                 else: print("VALUE ERROR VEL: OUTSIDE RANGE", v)
             else: print("TYPE ERROR VEL", v)
+
+        # we use the get_absolute_position method to get the positions of all vehicles
+        pos = [self.k.vehicle.get_x_by_id(veh_id) for veh_id in ids]
+
+        # we use the get_speed method to get the velocities of all vehicles
+        vel = [self.k.vehicle.get_speed(veh_id) for veh_id in ids]
 
         # the speeds and positions are concatenated to produce the state
         len_zeros = 2000-len(np.concatenate((pos2,vel2)))
