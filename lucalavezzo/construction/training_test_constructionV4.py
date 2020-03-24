@@ -16,7 +16,7 @@ from flow.core.params import InFlows
 from flow.controllers import SimLaneChangeController
 from flow.networks import Network
 import os
-from construction_controller import ConstructionRouter
+from constructionRouter import ConstructionRouter
 from flow.core.params import SumoLaneChangeParams
 
 from env_constructionV4_padding import myEnv
