@@ -36,8 +36,8 @@ class myEnv(Env):
     @property
     def observation_space(self):
         return Box(
-            low=-100000,
-            high=100000,
+            low=-1,
+            high=1,
             #shape=(2*self.initial_vehicles.num_vehicles,),
             shape=(2*1000,),
             dtype=np.float32
@@ -46,9 +46,11 @@ class myEnv(Env):
     def _apply_rl_actions(self, rl_actions):
         # the names of all autonomous (RL) vehicles in the network
         rl_ids = self.k.vehicle.get_rl_ids()
+        sorted_rl_ids = sorted(self.k.vehicle.get_rl_ids(),
+                               key=self.k.vehicle.get_x_by_id)
 
         # use the base environment method to convert actions into accelerations for the rl vehicles
-        self.k.vehicle.apply_acceleration(rl_ids, rl_actions)
+        self.k.vehicle.apply_acceleration(sorted_rl_ids, rl_actions)
 
     def get_state(self, **kwargs):
         # the get_ids() method is used to get the names of all vehicles in the network
@@ -83,11 +85,15 @@ class myEnv(Env):
         return np.concatenate((pos2,vel2,zeros))
 
     def compute_reward(self, rl_actions, **kwargs):
-        # the get_ids() method is used to get the names of all vehicles in the network
         ids = self.k.vehicle.get_ids()
-
-        # we next get a list of the speeds of all vehicles in the network
         speeds = self.k.vehicle.get_speed(ids)
 
-        # finally, we return the average of all these speeds as the reward
-        return np.mean(speeds)
+        targetSpeeds = []
+        for veh_id in ids: 
+            edge = self.k.vehicle.get_edge(veh_id)
+            if edge == "gneE4.264.110" or edge == "gneE4.264":
+                targetSpeeds.append(self.k.vehicle.get_speed(veh_id))
+
+        if(len(targetSpeeds)==0): return 0
+
+        return np.mean(targetSpeeds)

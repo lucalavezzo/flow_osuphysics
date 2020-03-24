@@ -27,9 +27,9 @@ ADDITIONAL_ENV_PARAMS = {
 }
 
 # time horizon of a single rollout
-HORIZON = 2000
+HORIZON = 5000
 # number of rollouts per training iteration
-N_ROLLOUTS = 20
+N_ROLLOUTS = 10
 # number of parallel workers
 N_CPUS = 2
 
@@ -41,20 +41,20 @@ vehicles.add("rl",
              car_following_params=SumoCarFollowingParams(
                  speed_mode="obey_safe_speed",  
              ),
-             num_vehicles=2)
+             num_vehicles=10
+             )
 vehicles.add("human",
              acceleration_controller=(IDMController, {}),
              lane_change_controller=(SimLaneChangeController, {}),
-             #routing_controller=(ContinuousRouter, {}),
              car_following_params=SumoCarFollowingParams(
-                 speed_mode="obey_safe_speed",  
+                 speed_mode=25
              ),
-             lane_change_params = SumoLaneChangeParams(lane_change_mode="strategic",lcpushy=1.0),
+             lane_change_params = SumoLaneChangeParams(lane_change_mode=1621),
              num_vehicles=0)
 
 # specify the edges vehicles can originate on
 initial_config = InitialConfig(
-    edges_distribution=["gneE4","gneE35","gneE38"]
+    edges_distribution=["gneE43"]
 )
 
 # specify the routes for vehicles in the network
@@ -62,26 +62,18 @@ class Network(Network):
 
     def specify_routes(self, net_params):
         return {
-                "gneE35": ["gneE35","gneE15","gneE13","gneE4.264","gneE4.264.110","gneE8","gneE9","gneE9.252","gneE33"],
-                "gneE4": ["gneE4","gneE17","gneE11","gneE13","gneE4.264","gneE4.264.110","gneE8","gneE9","gneE9.252","gneE33"],
+                "gneE43": ["gneE43","gneE4.264","gneE4.264.110","gneE8","gneE9","gneE9.252","gneE33"],
                "gneE8": ["gneE8","gneE9","gneE37","gneE38","gneE39","gneE4.264.110","gneE8"]
                }
 
 
 inflow = InFlows()
 inflow.add(veh_type="human",
-           edge="gneE4",
-           vehs_per_hour=1000,
+           edge="gneE43",
+           vehs_per_hour=10000,
             depart_lane="random",
             depart_speed="random",
             color="white")
-inflow.add(veh_type="human",
-           edge="gneE35",
-           vehs_per_hour=3000,
-            depart_lane="random",
-            depart_speed="random",
-            color="blue")
-
 
 file_dir = "/home/llavezzo/"
 net_params = NetParams(
@@ -104,7 +96,7 @@ flow_params = dict(
 
     # sumo-related parameters (see flow.core.params.SumoParams)
     sim=SumoParams(
-        sim_step=0.1,
+        sim_step=0.5,
         render=False,
         restart_instance=True
     ),
@@ -115,7 +107,7 @@ flow_params = dict(
         warmup_steps=1000,
         clip_actions=False,
         additional_params={
-            "target_velocity": 40,
+            "target_velocity": 50,
             "sort_vehicles": False,
             "max_accel": 2,
             "max_decel": 2,
@@ -155,7 +147,7 @@ def setup_exps():
     config["num_workers"] = N_CPUS
     config["train_batch_size"] = HORIZON * N_ROLLOUTS
     config["gamma"] = 0.999  # discount rate
-    config["model"].update({"fcnet_hiddens": [16, 16]})
+    config["model"].update({"fcnet_hiddens": [16, 16, 16, 16]})
     config["use_gae"] = True
     config["lambda"] = 0.97
     config["kl_target"] = 0.02
