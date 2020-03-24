@@ -8,4 +8,4 @@
 cd $PBS_O_WORKDIR
 echo $PBS_O_WORKDIR
 
-singularity exec /users/PAS1585/llavez99/work/rl_flow/docker/ubuntu_osuphysics_flow_v4.sif /bin/bash /users/PAS1585/llavez99/work/rl_flow/merge.sh
+singularity exec /users/PAS1585/llavez99/work/rl_flow/docker/ubuntu_osuphysics_flow_v4.sif /bin/bash /users/PAS1585/llavez99/work/rl_flow/flow_osuphysics/lucalavezzo/construction.sh
