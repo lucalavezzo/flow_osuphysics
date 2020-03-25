@@ -12,8 +12,6 @@ from flow.core.params import VehicleParams, SumoCarFollowingParams
 from flow.controllers import RLController, IDMController, ContinuousRouter
 from gym.spaces.box import Box
 from gym.spaces import Tuple
-
-# import the base environment class
 from flow.envs import Env
 
 ADDITIONAL_ENV_PARAMS = {
@@ -53,7 +51,7 @@ class myEnv(Env):
         self.k.vehicle.apply_acceleration(sorted_rl_ids, rl_actions)
 
     def get_state(self, **kwargs):
-        # the get_ids() method is used to get the names of all vehicles in the network
+        
         ids = self.k.vehicle.get_ids()
         
         #normalizing constants
@@ -68,12 +66,12 @@ class myEnv(Env):
             edge = self.k.vehicle.get_edge(veh_id)
             
             if type(r) is int or type(r) is float or type(r) is long:
-                if -100000 <= r <= 100000:
+                if -1 <= r/max_length <= 1:
                     pos2.append(r/max_length)
-                else: print("VALUE ERROR VEL: OUTSIDE RANGE", r)      #FIXME: why does it fail? collisions? penalize
+                else: print("VALUE ERROR VEL: OUTSIDE RANGE", r)      #FIXME: why does it fail? collisions? penalize when it happens?
             else: print("TYPE ERROR POS", r)
             if type(v) is int or type(v) is float or type(v) is long:
-                if -100000 <= v <= 100000:
+                if -1 <= v/max_speed <= 1:
                     vel2.append(v/max_speed)
                 else: print("VALUE ERROR VEL: OUTSIDE RANGE", v)
             else: print("TYPE ERROR VEL", v)
@@ -88,6 +86,7 @@ class myEnv(Env):
         ids = self.k.vehicle.get_ids()
         speeds = self.k.vehicle.get_speed(ids)
 
+        #Only count speeds of cars in edge prior to the 'construction site'
         targetSpeeds = []
         for veh_id in ids: 
             edge = self.k.vehicle.get_edge(veh_id)

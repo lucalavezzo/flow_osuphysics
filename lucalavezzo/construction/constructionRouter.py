@@ -5,8 +5,6 @@ from flow.controllers.base_routing_controller import BaseRouter
 from flow.controllers.routing_controllers import ContinuousRouter
 
 
-
-
 class ConstructionRouter(ContinuousRouter):
 
     def choose_route(self, env):
