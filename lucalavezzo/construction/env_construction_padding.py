@@ -68,7 +68,7 @@ class myEnv(Env):
             if type(r) is int or type(r) is float or type(r) is long:
                 if -1 <= r/max_length <= 1:
                     pos2.append(r/max_length)
-                else: print("VALUE ERROR VEL: OUTSIDE RANGE", r)      #FIXME: why does it fail? collisions? penalize when it happens?
+                else: print("VALUE ERROR POS: OUTSIDE RANGE", r)      #FIXME: why does it fail? collisions? penalize when it happens?
             else: print("TYPE ERROR POS", r)
             if type(v) is int or type(v) is float or type(v) is long:
                 if -1 <= v/max_speed <= 1:
