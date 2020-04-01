@@ -1,0 +1,17 @@
+/users/PYS1027/chnrhughes/work/flowtest/new/code/fig8_2lane_new
+=>> PBS: job killed: walltime 10801 exceeded limit 10800
+
+-----------------------
+Resources requested:
+nodes=1:ppn=40
+mem=190440mb
+-----------------------
+Resources used:
+cput=03:53:22
+walltime=03:00:11
+mem=0.892GB
+vmem=100.476GB
+-----------------------
+Resource units charged (estimate):
+12.012 RUs
+-----------------------

@@ -1,0 +1,767 @@
+['Network', 'BayBridgeNetwork', 'BayBridgeTollNetwork', 'BottleneckNetwork', 'FigureEightNetwork', 'TrafficLightGridNetwork', 'HighwayNetwork', 'RingNetwork', 'MergeNetwork', 'MultiRingNetwork', 'MiniCityNetwork', 'HighwayRampsNetwork']
+['Env', 'AccelEnv', 'LaneChangeAccelEnv', 'LaneChangeAccelPOEnv', 'TrafficLightGridTestEnv', 'MergePOEnv', 'BottleneckEnv', 'BottleneckAccelEnv', 'WaveAttenuationEnv', 'WaveAttenuationPOEnv', 'TrafficLightGridEnv', 'TrafficLightGridPOEnv', 'BottleneckDesiredVelocityEnv', 'TestEnv', 'BayBridgeEnv', 'BottleNeckAccelEnv', 'DesiredVelocityEnv', 'PO_TrafficLightGridEnv', 'GreenWaveTestEnv']
+WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/compat/v2_compat.py:61: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+2020-03-23 11:12:41,733	INFO node.py:498 -- Process STDOUT and STDERR is being redirected to /tmp/ray/session_2020-03-23_11-12-41_733771_450272/logs.
+2020-03-23 11:12:41,846	INFO services.py:409 -- Waiting for redis server at 127.0.0.1:30671 to respond...
+2020-03-23 11:12:41,959	INFO services.py:409 -- Waiting for redis server at 127.0.0.1:53679 to respond...
+2020-03-23 11:12:41,960	INFO services.py:809 -- Starting Redis shard with 10.0 GB max memory.
+2020-03-23 11:12:41,986	INFO node.py:512 -- Process STDOUT and STDERR is being redirected to /tmp/ray/session_2020-03-23_11-12-41_733771_450272/logs.
+2020-03-23 11:12:41,986	WARNING services.py:1301 -- Warning: Capping object memory store to 20.0GB. To increase this further, specify `object_store_memory` when calling ray.init() or ray start.
+2020-03-23 11:12:41,987	INFO services.py:1475 -- Starting the Plasma object store with 20.0 GB memory using /dev/shm.
+2020-03-23 11:12:42,073	INFO trial_runner.py:176 -- Starting a new experiment.
+== Status ==
+Using FIFO scheduling algorithm.
+Resources requested: 0/2 CPUs, 0/0 GPUs
+Memory usage on this node: 11.3/201.2 GB
+
+2020-03-23 11:12:42,079	WARNING signature.py:108 -- The function with_updates has a **kwargs argument, which is currently not supported.
+WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/tune/logger.py:133: The name tf.VERSION is deprecated. Please use tf.version.VERSION instead.
+
+WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/tune/logger.py:138: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+2020-03-23 11:12:42,097	ERROR log_sync.py:34 -- Log sync requires cluster to be setup with `ray up`.
+== Status ==
+Using FIFO scheduling algorithm.
+Resources requested: 2/2 CPUs, 0/0 GPUs
+Memory usage on this node: 11.3/201.2 GB
+Result logdir: /users/PYS1027/chnrhughes/ray_results/simple_training_example_ring_v1
+Number of trials: 1 ({'RUNNING': 1})
+RUNNING trials:
+ - PPO_WaveAttenuationPOEnv-v0_0:	RUNNING
+
+[2m[36m(pid=450381)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/compat/v2_compat.py:61: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(pid=450381)[0m Instructions for updating:
+[2m[36m(pid=450381)[0m non-resource variables are not supported in the long term
+[2m[36m(pid=450381)[0m 2020-03-23 11:12:46,997	WARNING ppo.py:143 -- FYI: By default, the value function will not share layers with the policy model ('vf_share_layers': False).
+[2m[36m(pid=450381)[0m 2020-03-23 11:12:48,164	INFO rollout_worker.py:319 -- Creating policy evaluation worker 0 on CPU (please ignore any CUDA init errors)
+[2m[36m(pid=450381)[0m 2020-03-23 11:12:48.164995: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+[2m[36m(pid=450381)[0m 2020-03-23 11:12:48.170003: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+[2m[36m(pid=450381)[0m 2020-03-23 11:12:48.171691: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x6454060 executing computations on platform Host. Devices:
+[2m[36m(pid=450381)[0m 2020-03-23 11:12:48.171724: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+[2m[36m(pid=450381)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/fcnet_v1.py:48: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+[2m[36m(pid=450381)[0m Instructions for updating:
+[2m[36m(pid=450381)[0m Use keras.layers.dense instead.
+[2m[36m(pid=450381)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/fcnet_v1.py:48: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+[2m[36m(pid=450381)[0m Instructions for updating:
+[2m[36m(pid=450381)[0m Use keras.layers.dense instead.
+[2m[36m(pid=450381)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/tf_action_dist.py:138: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=450381)[0m Instructions for updating:
+[2m[36m(pid=450381)[0m Use `tf.cast` instead.
+[2m[36m(pid=450381)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/tf_action_dist.py:138: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=450381)[0m Instructions for updating:
+[2m[36m(pid=450381)[0m Use `tf.cast` instead.
+[2m[36m(pid=450381)[0m 2020-03-23 11:12:48.562251: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+[2m[36m(pid=450381)[0m 2020-03-23 11:12:48,578	INFO dynamic_tf_policy.py:324 -- Initializing loss function with dummy input:
+[2m[36m(pid=450381)[0m 
+[2m[36m(pid=450381)[0m { 'action_prob': <tf.Tensor 'default_policy/action_prob:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=450381)[0m   'actions': <tf.Tensor 'default_policy/actions:0' shape=(?, 1) dtype=float32>,
+[2m[36m(pid=450381)[0m   'advantages': <tf.Tensor 'default_policy/advantages:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=450381)[0m   'behaviour_logits': <tf.Tensor 'default_policy/behaviour_logits:0' shape=(?, 2) dtype=float32>,
+[2m[36m(pid=450381)[0m   'dones': <tf.Tensor 'default_policy/dones:0' shape=(?,) dtype=bool>,
+[2m[36m(pid=450381)[0m   'new_obs': <tf.Tensor 'default_policy/new_obs:0' shape=(?, 3) dtype=float32>,
+[2m[36m(pid=450381)[0m   'obs': <tf.Tensor 'default_policy/observation:0' shape=(?, 3) dtype=float32>,
+[2m[36m(pid=450381)[0m   'prev_actions': <tf.Tensor 'default_policy/action:0' shape=(?, 1) dtype=float32>,
+[2m[36m(pid=450381)[0m   'prev_rewards': <tf.Tensor 'default_policy/prev_reward:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=450381)[0m   'rewards': <tf.Tensor 'default_policy/rewards:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=450381)[0m   'value_targets': <tf.Tensor 'default_policy/value_targets:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=450381)[0m   'vf_preds': <tf.Tensor 'default_policy/vf_preds:0' shape=(?,) dtype=float32>}
+[2m[36m(pid=450381)[0m 
+[2m[36m(pid=450381)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/ops/array_ops.py:1354: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=450381)[0m Instructions for updating:
+[2m[36m(pid=450381)[0m Use tf.where in 2.0, which has the same broadcast rule as np.where
+[2m[36m(pid=450381)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/ops/array_ops.py:1354: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=450381)[0m Instructions for updating:
+[2m[36m(pid=450381)[0m Use tf.where in 2.0, which has the same broadcast rule as np.where
+[2m[36m(pid=450381)[0m 2020-03-23 11:12:49,307	INFO rollout_worker.py:742 -- Built policy map: {'default_policy': <ray.rllib.policy.tf_policy_template.PPOTFPolicy object at 0x2b8d5bfdbbe0>}
+[2m[36m(pid=450381)[0m 2020-03-23 11:12:49,307	INFO rollout_worker.py:743 -- Built preprocessor map: {'default_policy': <ray.rllib.models.preprocessors.NoPreprocessor object at 0x2b8d5bfdbb00>}
+[2m[36m(pid=450381)[0m 2020-03-23 11:12:49,307	INFO rollout_worker.py:356 -- Built filter map: {'default_policy': <ray.rllib.utils.filter.NoFilter object at 0x2b8d5bfdb9b0>}
+[2m[36m(pid=450381)[0m 2020-03-23 11:12:49,328	INFO multi_gpu_optimizer.py:93 -- LocalMultiGPUOptimizer devices ['/cpu:0']
+[2m[36m(pid=450381)[0m 2020-03-23 11:12:51,632	WARNING util.py:47 -- Install gputil for GPU system monitoring.
+[2m[36m(pid=450381)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/policy/tf_policy.py:570: Variable.load (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+[2m[36m(pid=450381)[0m Instructions for updating:
+[2m[36m(pid=450381)[0m Prefer Variable.assign which has equivalent behavior in 2.X.
+[2m[36m(pid=450381)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/policy/tf_policy.py:570: Variable.load (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+[2m[36m(pid=450381)[0m Instructions for updating:
+[2m[36m(pid=450381)[0m Prefer Variable.assign which has equivalent behavior in 2.X.
+[2m[36m(pid=450380)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/compat/v2_compat.py:61: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(pid=450380)[0m Instructions for updating:
+[2m[36m(pid=450380)[0m non-resource variables are not supported in the long term
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:54,133	INFO rollout_worker.py:319 -- Creating policy evaluation worker 1 on CPU (please ignore any CUDA init errors)
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:54.146976: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:54.150739: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:54.152502: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x637de00 executing computations on platform Host. Devices:
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:54.152532: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+[2m[36m(pid=450380)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/fcnet_v1.py:48: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+[2m[36m(pid=450380)[0m Instructions for updating:
+[2m[36m(pid=450380)[0m Use keras.layers.dense instead.
+[2m[36m(pid=450380)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/fcnet_v1.py:48: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+[2m[36m(pid=450380)[0m Instructions for updating:
+[2m[36m(pid=450380)[0m Use keras.layers.dense instead.
+[2m[36m(pid=450380)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/tf_action_dist.py:138: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=450380)[0m Instructions for updating:
+[2m[36m(pid=450380)[0m Use `tf.cast` instead.
+[2m[36m(pid=450380)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/tf_action_dist.py:138: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=450380)[0m Instructions for updating:
+[2m[36m(pid=450380)[0m Use `tf.cast` instead.
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:54.556207: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:54,571	INFO dynamic_tf_policy.py:324 -- Initializing loss function with dummy input:
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m { 'action_prob': <tf.Tensor 'default_policy/action_prob:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=450380)[0m   'actions': <tf.Tensor 'default_policy/actions:0' shape=(?, 1) dtype=float32>,
+[2m[36m(pid=450380)[0m   'advantages': <tf.Tensor 'default_policy/advantages:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=450380)[0m   'behaviour_logits': <tf.Tensor 'default_policy/behaviour_logits:0' shape=(?, 2) dtype=float32>,
+[2m[36m(pid=450380)[0m   'dones': <tf.Tensor 'default_policy/dones:0' shape=(?,) dtype=bool>,
+[2m[36m(pid=450380)[0m   'new_obs': <tf.Tensor 'default_policy/new_obs:0' shape=(?, 3) dtype=float32>,
+[2m[36m(pid=450380)[0m   'obs': <tf.Tensor 'default_policy/observation:0' shape=(?, 3) dtype=float32>,
+[2m[36m(pid=450380)[0m   'prev_actions': <tf.Tensor 'default_policy/action:0' shape=(?, 1) dtype=float32>,
+[2m[36m(pid=450380)[0m   'prev_rewards': <tf.Tensor 'default_policy/prev_reward:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=450380)[0m   'rewards': <tf.Tensor 'default_policy/rewards:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=450380)[0m   'value_targets': <tf.Tensor 'default_policy/value_targets:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=450380)[0m   'vf_preds': <tf.Tensor 'default_policy/vf_preds:0' shape=(?,) dtype=float32>}
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/ops/array_ops.py:1354: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=450380)[0m Instructions for updating:
+[2m[36m(pid=450380)[0m Use tf.where in 2.0, which has the same broadcast rule as np.where
+[2m[36m(pid=450380)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/ops/array_ops.py:1354: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=450380)[0m Instructions for updating:
+[2m[36m(pid=450380)[0m Use tf.where in 2.0, which has the same broadcast rule as np.where
+[2m[36m(pid=450380)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/policy/tf_policy.py:570: Variable.load (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+[2m[36m(pid=450380)[0m Instructions for updating:
+[2m[36m(pid=450380)[0m Prefer Variable.assign which has equivalent behavior in 2.X.
+[2m[36m(pid=450380)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/policy/tf_policy.py:570: Variable.load (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+[2m[36m(pid=450380)[0m Instructions for updating:
+[2m[36m(pid=450380)[0m Prefer Variable.assign which has equivalent behavior in 2.X.
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 449
+[2m[36m(pid=450380)[0m v_max: 13.779514551658995
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:55,346	INFO rollout_worker.py:451 -- Generating sample batch of size 200
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:58,175	INFO sampler.py:304 -- Raw obs from env: { 0: { 'agent0': np.ndarray((3,), dtype=float64, min=-0.009, max=0.885, mean=0.307)}}
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:58,175	INFO sampler.py:305 -- Info return from env: {0: {'agent0': None}}
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:58,175	INFO sampler.py:403 -- Preprocessed obs: np.ndarray((3,), dtype=float64, min=-0.009, max=0.885, mean=0.307)
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:58,176	INFO sampler.py:407 -- Filtered obs: np.ndarray((3,), dtype=float64, min=-0.009, max=0.885, mean=0.307)
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:58,176	INFO sampler.py:521 -- Inputs to compute_actions():
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m { 'default_policy': [ { 'data': { 'agent_id': 'agent0',
+[2m[36m(pid=450380)[0m                                   'env_id': 0,
+[2m[36m(pid=450380)[0m                                   'info': None,
+[2m[36m(pid=450380)[0m                                   'obs': np.ndarray((3,), dtype=float64, min=-0.009, max=0.885, mean=0.307),
+[2m[36m(pid=450380)[0m                                   'prev_action': np.ndarray((1,), dtype=float32, min=0.0, max=0.0, mean=0.0),
+[2m[36m(pid=450380)[0m                                   'prev_reward': 0.0,
+[2m[36m(pid=450380)[0m                                   'rnn_state': []},
+[2m[36m(pid=450380)[0m                         'type': 'PolicyEvalData'}]}
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:58,176	INFO tf_run_builder.py:92 -- Executing TF run without tracing. To dump TF timeline traces to disk, set the TF_TIMELINE_DIR environment variable.
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:58,210	INFO sampler.py:548 -- Outputs of compute_actions():
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m { 'default_policy': ( np.ndarray((1, 1), dtype=float32, min=-0.453, max=-0.453, mean=-0.453),
+[2m[36m(pid=450380)[0m                       [],
+[2m[36m(pid=450380)[0m                       { 'action_prob': np.ndarray((1,), dtype=float32, min=0.36, max=0.36, mean=0.36),
+[2m[36m(pid=450380)[0m                         'behaviour_logits': np.ndarray((1, 2), dtype=float32, min=-0.001, max=0.002, mean=0.001),
+[2m[36m(pid=450380)[0m                         'vf_preds': np.ndarray((1,), dtype=float32, min=0.003, max=0.003, mean=0.003)})}
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:58,959	INFO sample_batch_builder.py:161 -- Trajectory fragment after postprocess_trajectory():
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m { 'agent0': { 'data': { 'action_prob': np.ndarray((200,), dtype=float32, min=0.003, max=0.398, mean=0.284),
+[2m[36m(pid=450380)[0m                         'actions': np.ndarray((200, 1), dtype=float32, min=-2.601, max=3.154, mean=-0.084),
+[2m[36m(pid=450380)[0m                         'advantages': np.ndarray((200,), dtype=float32, min=-7.393, max=11.103, mean=1.285),
+[2m[36m(pid=450380)[0m                         'agent_index': np.ndarray((200,), dtype=int64, min=0.0, max=0.0, mean=0.0),
+[2m[36m(pid=450380)[0m                         'behaviour_logits': np.ndarray((200, 2), dtype=float32, min=-0.001, max=0.003, mean=0.001),
+[2m[36m(pid=450380)[0m                         'dones': np.ndarray((200,), dtype=bool, min=0.0, max=0.0, mean=0.0),
+[2m[36m(pid=450380)[0m                         'eps_id': np.ndarray((200,), dtype=int64, min=1940454609.0, max=1940454609.0, mean=1940454609.0),
+[2m[36m(pid=450380)[0m                         'infos': np.ndarray((200,), dtype=object, head={}),
+[2m[36m(pid=450380)[0m                         'new_obs': np.ndarray((200, 3), dtype=float32, min=-0.006, max=0.882, mean=0.307),
+[2m[36m(pid=450380)[0m                         'obs': np.ndarray((200, 3), dtype=float32, min=-0.009, max=0.885, mean=0.307),
+[2m[36m(pid=450380)[0m                         'prev_actions': np.ndarray((200, 1), dtype=float32, min=-2.601, max=3.154, mean=-0.088),
+[2m[36m(pid=450380)[0m                         'prev_rewards': np.ndarray((200,), dtype=float32, min=-1.483, max=2.61, mean=0.051),
+[2m[36m(pid=450380)[0m                         'rewards': np.ndarray((200,), dtype=float32, min=-1.483, max=2.61, mean=0.046),
+[2m[36m(pid=450380)[0m                         't': np.ndarray((200,), dtype=int64, min=0.0, max=199.0, mean=99.5),
+[2m[36m(pid=450380)[0m                         'unroll_id': np.ndarray((200,), dtype=int64, min=0.0, max=0.0, mean=0.0),
+[2m[36m(pid=450380)[0m                         'value_targets': np.ndarray((200,), dtype=float32, min=-7.39, max=11.105, mean=1.288),
+[2m[36m(pid=450380)[0m                         'vf_preds': np.ndarray((200,), dtype=float32, min=0.002, max=0.003, mean=0.003)},
+[2m[36m(pid=450380)[0m               'type': 'SampleBatch'}}
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m 2020-03-23 11:12:58,960	INFO rollout_worker.py:485 -- Completed sample batch:
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m { 'data': { 'action_prob': np.ndarray((200,), dtype=float32, min=0.003, max=0.398, mean=0.284),
+[2m[36m(pid=450380)[0m             'actions': np.ndarray((200, 1), dtype=float32, min=-2.601, max=3.154, mean=-0.084),
+[2m[36m(pid=450380)[0m             'advantages': np.ndarray((200,), dtype=float32, min=-7.393, max=11.103, mean=1.285),
+[2m[36m(pid=450380)[0m             'agent_index': np.ndarray((200,), dtype=int64, min=0.0, max=0.0, mean=0.0),
+[2m[36m(pid=450380)[0m             'behaviour_logits': np.ndarray((200, 2), dtype=float32, min=-0.001, max=0.003, mean=0.001),
+[2m[36m(pid=450380)[0m             'dones': np.ndarray((200,), dtype=bool, min=0.0, max=0.0, mean=0.0),
+[2m[36m(pid=450380)[0m             'eps_id': np.ndarray((200,), dtype=int64, min=1940454609.0, max=1940454609.0, mean=1940454609.0),
+[2m[36m(pid=450380)[0m             'infos': np.ndarray((200,), dtype=object, head={}),
+[2m[36m(pid=450380)[0m             'new_obs': np.ndarray((200, 3), dtype=float32, min=-0.006, max=0.882, mean=0.307),
+[2m[36m(pid=450380)[0m             'obs': np.ndarray((200, 3), dtype=float32, min=-0.009, max=0.885, mean=0.307),
+[2m[36m(pid=450380)[0m             'prev_actions': np.ndarray((200, 1), dtype=float32, min=-2.601, max=3.154, mean=-0.088),
+[2m[36m(pid=450380)[0m             'prev_rewards': np.ndarray((200,), dtype=float32, min=-1.483, max=2.61, mean=0.051),
+[2m[36m(pid=450380)[0m             'rewards': np.ndarray((200,), dtype=float32, min=-1.483, max=2.61, mean=0.046),
+[2m[36m(pid=450380)[0m             't': np.ndarray((200,), dtype=int64, min=0.0, max=199.0, mean=99.5),
+[2m[36m(pid=450380)[0m             'unroll_id': np.ndarray((200,), dtype=int64, min=0.0, max=0.0, mean=0.0),
+[2m[36m(pid=450380)[0m             'value_targets': np.ndarray((200,), dtype=float32, min=-7.39, max=11.105, mean=1.288),
+[2m[36m(pid=450380)[0m             'vf_preds': np.ndarray((200,), dtype=float32, min=0.002, max=0.003, mean=0.003)},
+[2m[36m(pid=450380)[0m   'type': 'SampleBatch'}
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 433
+[2m[36m(pid=450380)[0m v_max: 13.098852887205915
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 443
+[2m[36m(pid=450380)[0m v_max: 13.526048685118921
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 421
+[2m[36m(pid=450380)[0m v_max: 12.578856440628313
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 465
+[2m[36m(pid=450380)[0m v_max: 14.444260233472747
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 432
+[2m[36m(pid=450380)[0m v_max: 13.055818636318849
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 454
+[2m[36m(pid=450380)[0m v_max: 13.989029052321595
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 438
+[2m[36m(pid=450380)[0m v_max: 13.313175707324959
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 466
+[2m[36m(pid=450380)[0m v_max: 14.485243997142392
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 433
+[2m[36m(pid=450380)[0m v_max: 13.098852887205915
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 434
+[2m[36m(pid=450380)[0m v_max: 13.141831099099308
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 446
+[2m[36m(pid=450380)[0m v_max: 13.653056435604688
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 449
+[2m[36m(pid=450380)[0m v_max: 13.779514551658995
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 459
+[2m[36m(pid=450380)[0m v_max: 14.196942141703236
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 457
+[2m[36m(pid=450380)[0m v_max: 14.11397200216418
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 455
+[2m[36m(pid=450380)[0m v_max: 14.030741249995822
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 429
+[2m[36m(pid=450380)[0m v_max: 12.926383592490382
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 421
+[2m[36m(pid=450380)[0m v_max: 12.578856440628313
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 435
+[2m[36m(pid=450380)[0m v_max: 13.184752878885666
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 436
+[2m[36m(pid=450380)[0m v_max: 13.227617834291006
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 440
+[2m[36m(pid=450380)[0m v_max: 13.39850159847609
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/default_model/fc1/kernel:0' shape=(3, 32) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/default_model/fc1/bias:0' shape=(32,) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/default_model/fc2/kernel:0' shape=(32, 32) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/default_model/fc2/bias:0' shape=(32,) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/default_model/fc3/kernel:0' shape=(32, 32) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/default_model/fc3/bias:0' shape=(32,) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/default_model/fc_out/kernel:0' shape=(32, 2) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/default_model/fc_out/bias:0' shape=(2,) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/value_function/fc1/kernel:0' shape=(3, 32) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/value_function/fc1/bias:0' shape=(32,) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/value_function/fc2/kernel:0' shape=(32, 32) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/value_function/fc2/bias:0' shape=(32,) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/value_function/fc3/kernel:0' shape=(32, 32) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/value_function/fc3/bias:0' shape=(32,) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/value_function/fc_out/kernel:0' shape=(32, 1) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,737	INFO tf_policy.py:355 -- Optimizing variable <tf.Variable 'default_policy/value_function/fc_out/bias:0' shape=(1,) dtype=float32_ref>
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,748	INFO multi_gpu_impl.py:146 -- Training on concatenated sample batches:
+[2m[36m(pid=450381)[0m 
+[2m[36m(pid=450381)[0m { 'inputs': [ np.ndarray((60000, 1), dtype=float32, min=-4.135, max=3.971, mean=-0.001),
+[2m[36m(pid=450381)[0m               np.ndarray((60000,), dtype=float32, min=-2.888, max=2.714, mean=-0.395),
+[2m[36m(pid=450381)[0m               np.ndarray((60000, 3), dtype=float32, min=-0.198, max=0.986, mean=0.288),
+[2m[36m(pid=450381)[0m               np.ndarray((60000, 1), dtype=float32, min=-4.135, max=3.971, mean=-0.001),
+[2m[36m(pid=450381)[0m               np.ndarray((60000,), dtype=float32, min=-3.867, max=2.873, mean=-0.0),
+[2m[36m(pid=450381)[0m               np.ndarray((60000, 2), dtype=float32, min=-0.002, max=0.004, mean=0.001),
+[2m[36m(pid=450381)[0m               np.ndarray((60000,), dtype=float32, min=-54.567, max=21.719, mean=-10.795),
+[2m[36m(pid=450381)[0m               np.ndarray((60000,), dtype=float32, min=-0.001, max=0.004, mean=0.002)],
+[2m[36m(pid=450381)[0m   'placeholders': [ <tf.Tensor 'default_policy/action:0' shape=(?, 1) dtype=float32>,
+[2m[36m(pid=450381)[0m                     <tf.Tensor 'default_policy/prev_reward:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=450381)[0m                     <tf.Tensor 'default_policy/observation:0' shape=(?, 3) dtype=float32>,
+[2m[36m(pid=450381)[0m                     <tf.Tensor 'default_policy/actions:0' shape=(?, 1) dtype=float32>,
+[2m[36m(pid=450381)[0m                     <tf.Tensor 'default_policy/advantages:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=450381)[0m                     <tf.Tensor 'default_policy/behaviour_logits:0' shape=(?, 2) dtype=float32>,
+[2m[36m(pid=450381)[0m                     <tf.Tensor 'default_policy/value_targets:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=450381)[0m                     <tf.Tensor 'default_policy/vf_preds:0' shape=(?,) dtype=float32>],
+[2m[36m(pid=450381)[0m   'state_inputs': []}
+[2m[36m(pid=450381)[0m 
+[2m[36m(pid=450381)[0m 2020-03-23 11:18:08,748	INFO multi_gpu_impl.py:191 -- Divided 60000 rollout sequences, each of length 1, among 1 devices.
+Result for PPO_WaveAttenuationPOEnv-v0_0:
+  custom_metrics: {}
+  date: 2020-03-23_11-18-09
+  done: false
+  episode_len_mean: 3000.0
+  episode_reward_max: 25.599234327026196
+  episode_reward_mean: -1185.759783638517
+  episode_reward_min: -2589.879483997449
+  episodes_this_iter: 20
+  episodes_total: 20
+  experiment_id: febd4b6c1d054f52a62a2510517809aa
+  hostname: p0163.ten.osc.edu
+  info:
+    grad_time_ms: 613.763
+    learner:
+      default_policy:
+        cur_kl_coeff: 0.20000000298023224
+        cur_lr: 4.999999873689376e-05
+        entropy: 1.4115768671035767
+        entropy_coeff: 0.0
+        kl: 0.00030600663740187883
+        policy_loss: -0.005383179057389498
+        total_loss: 243.56883239746094
+        vf_explained_var: -6.870428478578106e-05
+        vf_loss: 243.5741424560547
+    load_time_ms: 62.175
+    num_steps_sampled: 60000
+    num_steps_trained: 49152
+    sample_time_ms: 316589.076
+    update_time_ms: 482.045
+  iterations_since_restore: 1
+  node_ip: 10.4.3.52
+  num_healthy_workers: 1
+  off_policy_estimator: {}
+  perf:
+    cpu_util_percent: 2.744150110375276
+    ram_util_percent: 5.899558498896247
+  pid: 450381
+  policy_reward_mean: {}
+  sampler_perf:
+    mean_env_wait_ms: 3.6713075972392537
+    mean_inference_ms: 0.48412651390324524
+    mean_processing_ms: 1.0544814792637571
+  time_since_restore: 317.81052255630493
+  time_this_iter_s: 317.81052255630493
+  time_total_s: 317.81052255630493
+  timestamp: 1584976689
+  timesteps_since_restore: 60000
+  timesteps_this_iter: 60000
+  timesteps_total: 60000
+  training_iteration: 1
+  trial_id: bde503b0
+  
+WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/tune/logger.py:118: The name tf.Summary is deprecated. Please use tf.compat.v1.Summary instead.
+
+== Status ==
+Using FIFO scheduling algorithm.
+Resources requested: 2/2 CPUs, 0/0 GPUs
+Memory usage on this node: 11.9/201.2 GB
+Result logdir: /users/PYS1027/chnrhughes/ray_results/simple_training_example_ring_v1
+Number of trials: 1 ({'RUNNING': 1})
+RUNNING trials:
+ - PPO_WaveAttenuationPOEnv-v0_0:	RUNNING, [2 CPUs, 0 GPUs], [pid=450381], 317 s, 1 iter, 60000 ts, -1.19e+03 rew
+
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 429
+[2m[36m(pid=450380)[0m v_max: 12.926383592490382
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 456
+[2m[36m(pid=450380)[0m v_max: 14.072389021476935
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 441
+[2m[36m(pid=450380)[0m v_max: 13.441076580337445
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 422
+[2m[36m(pid=450380)[0m v_max: 12.622480979232462
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 461
+[2m[36m(pid=450380)[0m v_max: 14.279648788166469
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 435
+[2m[36m(pid=450380)[0m v_max: 13.184752878885666
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 424
+[2m[36m(pid=450380)[0m v_max: 12.709574640976713
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 458
+[2m[36m(pid=450380)[0m v_max: 14.155489829238569
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 428
+[2m[36m(pid=450380)[0m v_max: 12.883129132000288
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 466
+[2m[36m(pid=450380)[0m v_max: 14.485243997142392
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 469
+[2m[36m(pid=450380)[0m v_max: 14.607783925502593
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 453
+[2m[36m(pid=450380)[0m v_max: 13.947252794796121
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 444
+[2m[36m(pid=450380)[0m v_max: 13.568445038902198
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 456
+[2m[36m(pid=450380)[0m v_max: 14.072389021476935
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 442
+[2m[36m(pid=450380)[0m v_max: 13.483592404273027
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 456
+[2m[36m(pid=450380)[0m v_max: 14.072389021476935
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 439
+[2m[36m(pid=450380)[0m v_max: 13.35586784500027
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 448
+[2m[36m(pid=450380)[0m v_max: 13.737423548064765
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 466
+[2m[36m(pid=450380)[0m v_max: 14.485243997142392
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 438
+[2m[36m(pid=450380)[0m v_max: 13.313175707324959
+[2m[36m(pid=450380)[0m -----------------------
+Result for PPO_WaveAttenuationPOEnv-v0_0:
+  custom_metrics: {}
+  date: 2020-03-23_11-23-21
+  done: false
+  episode_len_mean: 3000.0
+  episode_reward_max: 318.37163075661357
+  episode_reward_mean: -967.5360974551071
+  episode_reward_min: -2867.1824345196965
+  episodes_this_iter: 20
+  episodes_total: 40
+  experiment_id: febd4b6c1d054f52a62a2510517809aa
+  hostname: p0163.ten.osc.edu
+  info:
+    grad_time_ms: 444.936
+    learner:
+      default_policy:
+        cur_kl_coeff: 0.10000000149011612
+        cur_lr: 4.999999873689376e-05
+        entropy: 1.4006500244140625
+        entropy_coeff: 0.0
+        kl: 0.0004266484174877405
+        policy_loss: -0.004727096762508154
+        total_loss: 154.7266845703125
+        vf_explained_var: -0.0002372264862060547
+        vf_loss: 154.7313690185547
+    load_time_ms: 36.991
+    num_steps_sampled: 120000
+    num_steps_trained: 98304
+    sample_time_ms: 314388.007
+    update_time_ms: 242.197
+  iterations_since_restore: 2
+  node_ip: 10.4.3.52
+  num_healthy_workers: 1
+  off_policy_estimator: {}
+  perf:
+    cpu_util_percent: 2.618876404494382
+    ram_util_percent: 5.9
+  pid: 450381
+  policy_reward_mean: {}
+  sampler_perf:
+    mean_env_wait_ms: 3.661399188019176
+    mean_inference_ms: 0.4883592712598407
+    mean_processing_ms: 1.0553671281764698
+  time_since_restore: 630.3080611228943
+  time_this_iter_s: 312.49753856658936
+  time_total_s: 630.3080611228943
+  timestamp: 1584977001
+  timesteps_since_restore: 120000
+  timesteps_this_iter: 60000
+  timesteps_total: 120000
+  training_iteration: 2
+  trial_id: bde503b0
+  
+== Status ==
+Using FIFO scheduling algorithm.
+Resources requested: 2/2 CPUs, 0/0 GPUs
+Memory usage on this node: 11.9/201.2 GB
+Result logdir: /users/PYS1027/chnrhughes/ray_results/simple_training_example_ring_v1
+Number of trials: 1 ({'RUNNING': 1})
+RUNNING trials:
+ - PPO_WaveAttenuationPOEnv-v0_0:	RUNNING, [2 CPUs, 0 GPUs], [pid=450381], 630 s, 2 iter, 120000 ts, -968 rew
+
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 436
+[2m[36m(pid=450380)[0m v_max: 13.227617834291006
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 458
+[2m[36m(pid=450380)[0m v_max: 14.155489829238569
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 458
+[2m[36m(pid=450380)[0m v_max: 14.155489829238569
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 459
+[2m[36m(pid=450380)[0m v_max: 14.196942141703236
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 469
+[2m[36m(pid=450380)[0m v_max: 14.607783925502593
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 437
+[2m[36m(pid=450380)[0m v_max: 13.270425573924967
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 467
+[2m[36m(pid=450380)[0m v_max: 14.526159428559968
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 470
+[2m[36m(pid=450380)[0m v_max: 14.64849231201372
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 446
+[2m[36m(pid=450380)[0m v_max: 13.653056435604688
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 446
+[2m[36m(pid=450380)[0m v_max: 13.653056435604688
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 444
+[2m[36m(pid=450380)[0m v_max: 13.568445038902198
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 446
+[2m[36m(pid=450380)[0m v_max: 13.653056435604688
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 437
+[2m[36m(pid=450380)[0m v_max: 13.270425573924967
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 458
+[2m[36m(pid=450380)[0m v_max: 14.155489829238569
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 443
+[2m[36m(pid=450380)[0m v_max: 13.526048685118921
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 437
+[2m[36m(pid=450380)[0m v_max: 13.270425573924967
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 465
+[2m[36m(pid=450380)[0m v_max: 14.444260233472747
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 439
+[2m[36m(pid=450380)[0m v_max: 13.35586784500027
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 429
+[2m[36m(pid=450380)[0m v_max: 12.926383592490382
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 461
+[2m[36m(pid=450380)[0m v_max: 14.279648788166469
+[2m[36m(pid=450380)[0m -----------------------
+Result for PPO_WaveAttenuationPOEnv-v0_0:
+  custom_metrics: {}
+  date: 2020-03-23_11-28-33
+  done: false
+  episode_len_mean: 3000.0
+  episode_reward_max: 318.37163075661357
+  episode_reward_mean: -947.0785827101541
+  episode_reward_min: -3320.2616759558277
+  episodes_this_iter: 20
+  episodes_total: 60
+  experiment_id: febd4b6c1d054f52a62a2510517809aa
+  hostname: p0163.ten.osc.edu
+  info:
+    grad_time_ms: 386.102
+    learner:
+      default_policy:
+        cur_kl_coeff: 0.05000000074505806
+        cur_lr: 4.999999873689376e-05
+        entropy: 1.3888622522354126
+        entropy_coeff: 0.0
+        kl: 0.0005421110545285046
+        policy_loss: -0.004043325316160917
+        total_loss: 215.6523895263672
+        vf_explained_var: -0.0005124012823216617
+        vf_loss: 215.6563720703125
+    load_time_ms: 28.632
+    num_steps_sampled: 180000
+    num_steps_trained: 147456
+    sample_time_ms: 313289.971
+    update_time_ms: 162.432
+  iterations_since_restore: 3
+  node_ip: 10.4.3.52
+  num_healthy_workers: 1
+  off_policy_estimator: {}
+  perf:
+    cpu_util_percent: 2.6738148984198644
+    ram_util_percent: 5.900451467268623
+  pid: 450381
+  policy_reward_mean: {}
+  sampler_perf:
+    mean_env_wait_ms: 3.6543476825613537
+    mean_inference_ms: 0.49120349576814665
+    mean_processing_ms: 1.054871884489726
+  time_since_restore: 941.7038514614105
+  time_this_iter_s: 311.39579033851624
+  time_total_s: 941.7038514614105
+  timestamp: 1584977313
+  timesteps_since_restore: 180000
+  timesteps_this_iter: 60000
+  timesteps_total: 180000
+  training_iteration: 3
+  trial_id: bde503b0
+  
+== Status ==
+Using FIFO scheduling algorithm.
+Resources requested: 2/2 CPUs, 0/0 GPUs
+Memory usage on this node: 12.0/201.2 GB
+Result logdir: /users/PYS1027/chnrhughes/ray_results/simple_training_example_ring_v1
+Number of trials: 1 ({'RUNNING': 1})
+RUNNING trials:
+ - PPO_WaveAttenuationPOEnv-v0_0:	RUNNING, [2 CPUs, 0 GPUs], [pid=450381], 941 s, 3 iter, 180000 ts, -947 rew
+
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 446
+[2m[36m(pid=450380)[0m v_max: 13.653056435604688
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 458
+[2m[36m(pid=450380)[0m v_max: 14.155489829238569
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 424
+[2m[36m(pid=450380)[0m v_max: 12.709574640976713
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 439
+[2m[36m(pid=450380)[0m v_max: 13.35586784500027
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 443
+[2m[36m(pid=450380)[0m v_max: 13.526048685118921
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 463
+[2m[36m(pid=450380)[0m v_max: 14.36208909153496
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m 
+[2m[36m(pid=450380)[0m -----------------------
+[2m[36m(pid=450380)[0m ring length: 461
+[2m[36m(pid=450380)[0m v_max: 14.279648788166469
+[2m[36m(pid=450380)[0m -----------------------

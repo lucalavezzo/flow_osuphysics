@@ -1,0 +1,17 @@
+/users/PYS1027/chnrhughes/work/flowtest/new/code/ring2
+=>> PBS: job killed: walltime 10810 exceeded limit 10800
+
+-----------------------
+Resources requested:
+nodes=1:ppn=40
+mem=190440mb
+-----------------------
+Resources used:
+cput=03:08:22
+walltime=03:00:20
+mem=0.868GB
+vmem=99.734GB
+-----------------------
+Resource units charged (estimate):
+12.022 RUs
+-----------------------

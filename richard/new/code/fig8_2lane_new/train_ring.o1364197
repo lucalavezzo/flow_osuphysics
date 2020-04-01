@@ -1,0 +1,16 @@
+/users/PYS1027/chnrhughes/work/flowtest/new/code/ring2
+
+-----------------------
+Resources requested:
+nodes=1:ppn=40
+mem=190440mb
+-----------------------
+Resources used:
+cput=05:56:30
+walltime=05:41:58
+mem=0.856GB
+vmem=99.564GB
+-----------------------
+Resource units charged (estimate):
+22.797 RUs
+-----------------------

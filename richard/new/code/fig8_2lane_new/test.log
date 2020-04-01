@@ -1,0 +1,178 @@
+['Network', 'BayBridgeNetwork', 'BayBridgeTollNetwork', 'BottleneckNetwork', 'FigureEightNetwork', 'TrafficLightGridNetwork', 'HighwayNetwork', 'RingNetwork', 'MergeNetwork', 'MultiRingNetwork', 'MiniCityNetwork', 'HighwayRampsNetwork']
+*******
+ADDITIONAL_NET_PARAMS {'radius_ring': 30, 'lanes': 1, 'speed_limit': 30, 'resolution': 40}
+['Env', 'AccelEnv', 'LaneChangeAccelEnv', 'LaneChangeAccelPOEnv', 'TrafficLightGridTestEnv', 'MergePOEnv', 'BottleneckEnv', 'BottleneckAccelEnv', 'WaveAttenuationEnv', 'WaveAttenuationPOEnv', 'TrafficLightGridEnv', 'TrafficLightGridPOEnv', 'BottleneckDesiredVelocityEnv', 'TestEnv', 'BayBridgeEnv', 'BottleNeckAccelEnv', 'DesiredVelocityEnv', 'PO_TrafficLightGridEnv', 'GreenWaveTestEnv']
+== Status ==
+Using FIFO scheduling algorithm.
+Resources requested: 0/2 CPUs, 0/0 GPUs
+Memory usage on this node: 12.0/201.2 GB
+
+== Status ==
+Using FIFO scheduling algorithm.
+Resources requested: 2/2 CPUs, 0/0 GPUs
+Memory usage on this node: 12.0/201.2 GB
+Result logdir: /users/PYS1027/chnrhughes/ray_results/simple_training_example_figEight_v1
+Number of trials: 1 ({'RUNNING': 1})
+RUNNING trials:
+ - PPO_WaveAttenuationPOEnv-v0_0:	RUNNING
+
+[2m[36m(pid=172491)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/compat/v2_compat.py:61: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(pid=172491)[0m Instructions for updating:
+[2m[36m(pid=172491)[0m non-resource variables are not supported in the long term
+[2m[36m(pid=172491)[0m 2020-03-30 08:46:08,939	WARNING ppo.py:143 -- FYI: By default, the value function will not share layers with the policy model ('vf_share_layers': False).
+[2m[36m(pid=172491)[0m 2020-03-30 08:46:10,096	INFO rollout_worker.py:319 -- Creating policy evaluation worker 0 on CPU (please ignore any CUDA init errors)
+[2m[36m(pid=172491)[0m 2020-03-30 08:46:10.096925: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+[2m[36m(pid=172491)[0m 2020-03-30 08:46:10.102215: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+[2m[36m(pid=172491)[0m 2020-03-30 08:46:10.104287: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x6de6d90 executing computations on platform Host. Devices:
+[2m[36m(pid=172491)[0m 2020-03-30 08:46:10.104322: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+[2m[36m(pid=172491)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/fcnet_v1.py:48: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+[2m[36m(pid=172491)[0m Instructions for updating:
+[2m[36m(pid=172491)[0m Use keras.layers.dense instead.
+[2m[36m(pid=172491)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/fcnet_v1.py:48: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+[2m[36m(pid=172491)[0m Instructions for updating:
+[2m[36m(pid=172491)[0m Use keras.layers.dense instead.
+[2m[36m(pid=172491)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/tf_action_dist.py:138: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=172491)[0m Instructions for updating:
+[2m[36m(pid=172491)[0m Use `tf.cast` instead.
+[2m[36m(pid=172491)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/tf_action_dist.py:138: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=172491)[0m Instructions for updating:
+[2m[36m(pid=172491)[0m Use `tf.cast` instead.
+[2m[36m(pid=172491)[0m 2020-03-30 08:46:10.524528: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+[2m[36m(pid=172491)[0m 2020-03-30 08:46:10,540	INFO dynamic_tf_policy.py:324 -- Initializing loss function with dummy input:
+[2m[36m(pid=172491)[0m 
+[2m[36m(pid=172491)[0m { 'action_prob': <tf.Tensor 'default_policy/action_prob:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=172491)[0m   'actions': <tf.Tensor 'default_policy/actions:0' shape=(?, 1) dtype=float32>,
+[2m[36m(pid=172491)[0m   'advantages': <tf.Tensor 'default_policy/advantages:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=172491)[0m   'behaviour_logits': <tf.Tensor 'default_policy/behaviour_logits:0' shape=(?, 2) dtype=float32>,
+[2m[36m(pid=172491)[0m   'dones': <tf.Tensor 'default_policy/dones:0' shape=(?,) dtype=bool>,
+[2m[36m(pid=172491)[0m   'new_obs': <tf.Tensor 'default_policy/new_obs:0' shape=(?, 3) dtype=float32>,
+[2m[36m(pid=172491)[0m   'obs': <tf.Tensor 'default_policy/observation:0' shape=(?, 3) dtype=float32>,
+[2m[36m(pid=172491)[0m   'prev_actions': <tf.Tensor 'default_policy/action:0' shape=(?, 1) dtype=float32>,
+[2m[36m(pid=172491)[0m   'prev_rewards': <tf.Tensor 'default_policy/prev_reward:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=172491)[0m   'rewards': <tf.Tensor 'default_policy/rewards:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=172491)[0m   'value_targets': <tf.Tensor 'default_policy/value_targets:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=172491)[0m   'vf_preds': <tf.Tensor 'default_policy/vf_preds:0' shape=(?,) dtype=float32>}
+[2m[36m(pid=172491)[0m 
+[2m[36m(pid=172491)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/ops/array_ops.py:1354: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=172491)[0m Instructions for updating:
+[2m[36m(pid=172491)[0m Use tf.where in 2.0, which has the same broadcast rule as np.where
+[2m[36m(pid=172491)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/ops/array_ops.py:1354: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=172491)[0m Instructions for updating:
+[2m[36m(pid=172491)[0m Use tf.where in 2.0, which has the same broadcast rule as np.where
+[2m[36m(pid=172491)[0m 2020-03-30 08:46:11,303	INFO rollout_worker.py:742 -- Built policy map: {'default_policy': <ray.rllib.policy.tf_policy_template.PPOTFPolicy object at 0x2b994fff82e8>}
+[2m[36m(pid=172491)[0m 2020-03-30 08:46:11,303	INFO rollout_worker.py:743 -- Built preprocessor map: {'default_policy': <ray.rllib.models.preprocessors.NoPreprocessor object at 0x2b994fff8208>}
+[2m[36m(pid=172491)[0m 2020-03-30 08:46:11,304	INFO rollout_worker.py:356 -- Built filter map: {'default_policy': <ray.rllib.utils.filter.NoFilter object at 0x2b994fff80b8>}
+[2m[36m(pid=172491)[0m 2020-03-30 08:46:11,327	INFO multi_gpu_optimizer.py:93 -- LocalMultiGPUOptimizer devices ['/cpu:0']
+[2m[36m(pid=172491)[0m 2020-03-30 08:46:13,765	WARNING util.py:47 -- Install gputil for GPU system monitoring.
+[2m[36m(pid=172491)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/policy/tf_policy.py:570: Variable.load (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+[2m[36m(pid=172491)[0m Instructions for updating:
+[2m[36m(pid=172491)[0m Prefer Variable.assign which has equivalent behavior in 2.X.
+[2m[36m(pid=172491)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/policy/tf_policy.py:570: Variable.load (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+[2m[36m(pid=172491)[0m Instructions for updating:
+[2m[36m(pid=172491)[0m Prefer Variable.assign which has equivalent behavior in 2.X.
+[2m[36m(pid=172492)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/compat/v2_compat.py:61: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(pid=172492)[0m Instructions for updating:
+[2m[36m(pid=172492)[0m non-resource variables are not supported in the long term
+[2m[36m(pid=172492)[0m 2020-03-30 08:46:16,409	INFO rollout_worker.py:319 -- Creating policy evaluation worker 1 on CPU (please ignore any CUDA init errors)
+[2m[36m(pid=172492)[0m 2020-03-30 08:46:16.427257: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+[2m[36m(pid=172492)[0m 2020-03-30 08:46:16.431284: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+[2m[36m(pid=172492)[0m 2020-03-30 08:46:16.432925: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5cd2f20 executing computations on platform Host. Devices:
+[2m[36m(pid=172492)[0m 2020-03-30 08:46:16.432956: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+[2m[36m(pid=172492)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/fcnet_v1.py:48: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+[2m[36m(pid=172492)[0m Instructions for updating:
+[2m[36m(pid=172492)[0m Use keras.layers.dense instead.
+[2m[36m(pid=172492)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/fcnet_v1.py:48: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+[2m[36m(pid=172492)[0m Instructions for updating:
+[2m[36m(pid=172492)[0m Use keras.layers.dense instead.
+[2m[36m(pid=172492)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/tf_action_dist.py:138: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=172492)[0m Instructions for updating:
+[2m[36m(pid=172492)[0m Use `tf.cast` instead.
+[2m[36m(pid=172492)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/tf_action_dist.py:138: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=172492)[0m Instructions for updating:
+[2m[36m(pid=172492)[0m Use `tf.cast` instead.
+[2m[36m(pid=172492)[0m 2020-03-30 08:46:16.847647: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+[2m[36m(pid=172492)[0m 2020-03-30 08:46:16,862	INFO dynamic_tf_policy.py:324 -- Initializing loss function with dummy input:
+[2m[36m(pid=172492)[0m 
+[2m[36m(pid=172492)[0m { 'action_prob': <tf.Tensor 'default_policy/action_prob:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=172492)[0m   'actions': <tf.Tensor 'default_policy/actions:0' shape=(?, 1) dtype=float32>,
+[2m[36m(pid=172492)[0m   'advantages': <tf.Tensor 'default_policy/advantages:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=172492)[0m   'behaviour_logits': <tf.Tensor 'default_policy/behaviour_logits:0' shape=(?, 2) dtype=float32>,
+[2m[36m(pid=172492)[0m   'dones': <tf.Tensor 'default_policy/dones:0' shape=(?,) dtype=bool>,
+[2m[36m(pid=172492)[0m   'new_obs': <tf.Tensor 'default_policy/new_obs:0' shape=(?, 3) dtype=float32>,
+[2m[36m(pid=172492)[0m   'obs': <tf.Tensor 'default_policy/observation:0' shape=(?, 3) dtype=float32>,
+[2m[36m(pid=172492)[0m   'prev_actions': <tf.Tensor 'default_policy/action:0' shape=(?, 1) dtype=float32>,
+[2m[36m(pid=172492)[0m   'prev_rewards': <tf.Tensor 'default_policy/prev_reward:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=172492)[0m   'rewards': <tf.Tensor 'default_policy/rewards:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=172492)[0m   'value_targets': <tf.Tensor 'default_policy/value_targets:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=172492)[0m   'vf_preds': <tf.Tensor 'default_policy/vf_preds:0' shape=(?,) dtype=float32>}
+[2m[36m(pid=172492)[0m 
+[2m[36m(pid=172492)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/ops/array_ops.py:1354: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=172492)[0m Instructions for updating:
+[2m[36m(pid=172492)[0m Use tf.where in 2.0, which has the same broadcast rule as np.where
+[2m[36m(pid=172492)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/ops/array_ops.py:1354: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=172492)[0m Instructions for updating:
+[2m[36m(pid=172492)[0m Use tf.where in 2.0, which has the same broadcast rule as np.where
+[2m[36m(pid=172492)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/policy/tf_policy.py:570: Variable.load (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+[2m[36m(pid=172492)[0m Instructions for updating:
+[2m[36m(pid=172492)[0m Prefer Variable.assign which has equivalent behavior in 2.X.
+[2m[36m(pid=172492)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/policy/tf_policy.py:570: Variable.load (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+[2m[36m(pid=172492)[0m Instructions for updating:
+[2m[36m(pid=172492)[0m Prefer Variable.assign which has equivalent behavior in 2.X.
+[2m[36m(pid=172491)[0m 2020-03-30 08:46:17,669	INFO trainer.py:366 -- Worker crashed during call to train(). To attempt to continue training without the failed worker, set `'ignore_worker_failures': True`.
+[2m[36m(pid=172492)[0m 2020-03-30 08:46:17,657	INFO rollout_worker.py:451 -- Generating sample batch of size 200
+== Status ==
+Using FIFO scheduling algorithm.
+Resources requested: 2/2 CPUs, 0/0 GPUs
+Memory usage on this node: 12.5/201.2 GB
+Result logdir: /users/PYS1027/chnrhughes/ray_results/simple_training_example_figEight_v1
+Number of trials: 1 ({'RUNNING': 1})
+RUNNING trials:
+ - PPO_WaveAttenuationPOEnv-v0_0:	RUNNING, 1 failures: /users/PYS1027/chnrhughes/ray_results/simple_training_example_figEight_v1/PPO_WaveAttenuationPOEnv-v0_0_2020-03-30_08-46-04x7c3gk8x/error_2020-03-30_08-46-17.txt
+
+[2m[36m(pid=173080)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/compat/v2_compat.py:61: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(pid=173080)[0m Instructions for updating:
+[2m[36m(pid=173080)[0m non-resource variables are not supported in the long term
+[2m[36m(pid=173080)[0m 2020-03-30 08:46:22,742	WARNING ppo.py:143 -- FYI: By default, the value function will not share layers with the policy model ('vf_share_layers': False).
+[2m[36m(pid=173080)[0m 2020-03-30 08:46:23,902	INFO rollout_worker.py:319 -- Creating policy evaluation worker 0 on CPU (please ignore any CUDA init errors)
+[2m[36m(pid=173080)[0m 2020-03-30 08:46:23.903929: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+[2m[36m(pid=173080)[0m 2020-03-30 08:46:23.909147: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400000000 Hz
+[2m[36m(pid=173080)[0m 2020-03-30 08:46:23.910793: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5adbae0 executing computations on platform Host. Devices:
+[2m[36m(pid=173080)[0m 2020-03-30 08:46:23.910827: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+[2m[36m(pid=173080)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/fcnet_v1.py:48: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+[2m[36m(pid=173080)[0m Instructions for updating:
+[2m[36m(pid=173080)[0m Use keras.layers.dense instead.
+[2m[36m(pid=173080)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/fcnet_v1.py:48: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+[2m[36m(pid=173080)[0m Instructions for updating:
+[2m[36m(pid=173080)[0m Use keras.layers.dense instead.
+[2m[36m(pid=173080)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/tf_action_dist.py:138: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=173080)[0m Instructions for updating:
+[2m[36m(pid=173080)[0m Use `tf.cast` instead.
+[2m[36m(pid=173080)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/ray/rllib/models/tf/tf_action_dist.py:138: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=173080)[0m Instructions for updating:
+[2m[36m(pid=173080)[0m Use `tf.cast` instead.
+[2m[36m(pid=173080)[0m 2020-03-30 08:46:24.342734: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+[2m[36m(pid=173080)[0m 2020-03-30 08:46:24,358	INFO dynamic_tf_policy.py:324 -- Initializing loss function with dummy input:
+[2m[36m(pid=173080)[0m 
+[2m[36m(pid=173080)[0m { 'action_prob': <tf.Tensor 'default_policy/action_prob:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=173080)[0m   'actions': <tf.Tensor 'default_policy/actions:0' shape=(?, 1) dtype=float32>,
+[2m[36m(pid=173080)[0m   'advantages': <tf.Tensor 'default_policy/advantages:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=173080)[0m   'behaviour_logits': <tf.Tensor 'default_policy/behaviour_logits:0' shape=(?, 2) dtype=float32>,
+[2m[36m(pid=173080)[0m   'dones': <tf.Tensor 'default_policy/dones:0' shape=(?,) dtype=bool>,
+[2m[36m(pid=173080)[0m   'new_obs': <tf.Tensor 'default_policy/new_obs:0' shape=(?, 3) dtype=float32>,
+[2m[36m(pid=173080)[0m   'obs': <tf.Tensor 'default_policy/observation:0' shape=(?, 3) dtype=float32>,
+[2m[36m(pid=173080)[0m   'prev_actions': <tf.Tensor 'default_policy/action:0' shape=(?, 1) dtype=float32>,
+[2m[36m(pid=173080)[0m   'prev_rewards': <tf.Tensor 'default_policy/prev_reward:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=173080)[0m   'rewards': <tf.Tensor 'default_policy/rewards:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=173080)[0m   'value_targets': <tf.Tensor 'default_policy/value_targets:0' shape=(?,) dtype=float32>,
+[2m[36m(pid=173080)[0m   'vf_preds': <tf.Tensor 'default_policy/vf_preds:0' shape=(?,) dtype=float32>}
+[2m[36m(pid=173080)[0m 
+[2m[36m(pid=173080)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/ops/array_ops.py:1354: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=173080)[0m Instructions for updating:
+[2m[36m(pid=173080)[0m Use tf.where in 2.0, which has the same broadcast rule as np.where
+[2m[36m(pid=173080)[0m WARNING:tensorflow:From /users/PYS1027/chnrhughes/.local/lib/python3.5/site-packages/tensorflow/python/ops/array_ops.py:1354: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+[2m[36m(pid=173080)[0m Instructions for updating:
+[2m[36m(pid=173080)[0m Use tf.where in 2.0, which has the same broadcast rule as np.where
+[2m[36m(pid=173080)[0m 2020-03-30 08:46:25,121	INFO rollout_worker.py:742 -- Built policy map: {'default_policy': <ray.rllib.policy.tf_policy_template.PPOTFPolicy object at 0x2b63567122e8>}
+[2m[36m(pid=173080)[0m 2020-03-30 08:46:25,121	INFO rollout_worker.py:743 -- Built preprocessor map: {'default_policy': <ray.rllib.models.preprocessors.NoPreprocessor object at 0x2b6356712208>}
+[2m[36m(pid=173080)[0m 2020-03-30 08:46:25,121	INFO rollout_worker.py:356 -- Built filter map: {'default_policy': <ray.rllib.utils.filter.NoFilter object at 0x2b63567120b8>}
+[2m[36m(pid=173080)[0m 2020-03-30 08:46:25,146	INFO multi_gpu_optimizer.py:93 -- LocalMultiGPUOptimizer devices ['/cpu:0']
