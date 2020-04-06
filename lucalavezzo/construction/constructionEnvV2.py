@@ -45,7 +45,7 @@ class myEnv(Env):
             low=-1,
             high=1,
             #shape=(2*self.initial_vehicles.num_vehicles,),
-            shape=(5000,),
+            shape=(10*10+8,),
             dtype=np.float32
         )
 
@@ -56,7 +56,7 @@ class myEnv(Env):
                                key=self.k.vehicle.get_x_by_id)
         
         acceleration = rl_actions[::2][:num_rl]
-        directions = np.round(rl_actions[1::2])[:num_rl]
+        direction = np.round(rl_actions[1::2])[:num_rl]
 
         # represents vehicles that are allowed to change lanes
         non_lane_changing_veh = [
@@ -64,28 +64,21 @@ class myEnv(Env):
                 'lane_change_duration'] + self.k.vehicle.get_last_lc(veh_id)
             for veh_id in sorted_rl_ids]
         
-       
-        #Don't change lanes during intersection or in edge 4
-        edge4_start = 120
+        #Check that vehicles in junction begore edge with
+        # 2 lanes don't try to change to lane 3
         for i, veh_id in enumerate(sorted_rl_ids):
             edge_num = self.k.vehicle.get_edge(veh_id)
-#             if(edge_num == '' or edge_num[0] == ':'):
-#                 directions[i] = 0
-            if(edge_num == '' or edge_num[0] == ':gneJ6'):
-                directions[i] = 0
-#             if(edge_num == "edge4" ):
-#                 directions[i] = 0
-#             if(edge_num == "edge3"):
-#                 if(abs(self.k.vehicle.get_x_by_id(veh_id) - edge4_start) < 10):
-#                     directions[i] = 0
-         
-              
+            if(edge_num == '' or edge_num[0] == ':'):
+                direction[i] = 0
+            if(edge_num == ':gneJ6'):
+                direction[i] = 0
+
         # vehicle that are not allowed to change have their directions set to 0
-        directions[non_lane_changing_veh] = \
+        direction[non_lane_changing_veh] = \
             np.array([0] * sum(non_lane_changing_veh))
-        
+
         self.k.vehicle.apply_acceleration(sorted_rl_ids, acc=acceleration)
-        self.k.vehicle.apply_lane_change(sorted_rl_ids, direction=directions)
+        self.k.vehicle.apply_lane_change(sorted_rl_ids, direction=direction)
 
     def get_state(self, **kwargs):
         
@@ -95,66 +88,121 @@ class myEnv(Env):
         #normalizing constants
         max_speed = self.k.network.max_speed()
         for veh_id in ids:
+            if(abs(self.k.vehicle.get_speed(veh_id)) > 10000): continue
             if(self.k.vehicle.get_speed(veh_id) > max_speed): max_speed = self.k.vehicle.get_speed(veh_id)
         max_length = self.k.network.length()
         
-        pos=[]
-        vel=[]
-        edges=[]
-        lanes=[]
+        #rl vehicle info (4*num_rl)
+        pos=[]  
+        vel=[]  
+        edges=[] 
+        lanes=[] 
+
+        #follower/leader info (size 6*num_rl)
         types=[]
+        follower_dv = []
+        follower_dx = []
+        leader_dv = []
+        leader_dx = []
+
+        #network info (2*4)
+        lane_traffic=[0,0,0,0] 
+        lane_traffic_speed=[0,0,0,0]
+
+
+        #Density and average speed of vehicles in lane before construction zone
         for veh_id in ids:
-            
-            #RL or human agent
-            if(veh_id in rl_ids): types.append(1)
-            else: types.append(0)
-                
-            #Extract edge number
+
             edge_num = self.k.vehicle.get_edge(veh_id)
+            lane_num = int(self.k.vehicle.get_lane(veh_id))
+            v = self.k.vehicle.get_speed(veh_id)
+            if(-1 <= v/max_speed <= 1):
+                if(edge_num == "edge3"):
+                    lane_traffic[lane_num] += 1
+                    lane_traffic_speed[lane_num] += v/max_speed
+                
+
+        #Info for each RL vehicle
+        for rl_id in rl_ids:
+            
+            edge_num = self.k.vehicle.get_edge(rl_id)
             if edge_num is None or edge_num == '' or edge_num[0] == ':':
                 edge_num = -1
             else:
                 edge_num = edge_num[4:]
+            lane_num = self.k.vehicle.get_lane(rl_id)
+            r = self.k.vehicle.get_x_by_id(rl_id)
+            v = self.k.vehicle.get_speed(rl_id)
+            
+            follower_id = self.k.vehicle.get_follower(rl_id)
+            leader_id = self.k.vehicle.get_leader(rl_id)
 
-            #Ignore human vechicles that aren't in the path of the rl agents
-            if(veh_id not in rl_ids and edge_num not in observation_edges): continue
-                
-            r = self.k.vehicle.get_x_by_id(veh_id)
-            v = self.k.vehicle.get_speed(veh_id)
-            lane_num = self.k.vehicle.get_lane(veh_id)
-            
-            
-            #Append state info
-            
+            if leader_id in ["", None]:
+                leader_dv.append(1)
+                leader_dx.append(1)
+                types.append(-1)
+            else:
+                if -1 <= self.k.vehicle.get_speed(leader_id)/max_speed <= 1:
+                    leader_dv.append(self.k.vehicle.get_speed(leader_id)/max_speed)
+                else: 
+                    #print("VALUE ERROR LEADER_DV: OUTSIDE RANGE", self.k.vehicle.get_speed(leader_id), leader_id)
+                    leader_dv.append(0)
+
+                leader_dx.append((self.k.vehicle.get_x_by_id(leader_id) - self.k.vehicle.get_x_by_id(rl_id))/max_length)
+                if(rl_id in rl_ids): types.append(1)
+                else: types.append(0)
+
+            if follower_id in ["",None]:
+                follower_dv.append(1)
+                follower_dx.append(1)
+                types.append(-1)
+            else:
+                if -1 <= self.k.vehicle.get_speed(follower_id)/max_speed <= 1:
+                    follower_dv.append(self.k.vehicle.get_speed(follower_id)/max_speed)
+                else: 
+                    #print("VALUE ERROR FOLLOWER_DV: OUTSIDE RANGE", self.k.vehicle.get_speed(follower_id), follower_id)
+                    follower_dv.append(0)
+                 
+                follower_dx.append((self.k.vehicle.get_x_by_id(rl_id) - self.k.vehicle.get_x_by_id(follower_id))/max_length)
+                if(rl_id in rl_ids): types.append(1)
+                else: types.append(0)
+
+
             edge_num = int(edge_num)/MAX_EDGE
             lane_num = int(lane_num)/MAX_LANE
             if -1 <= edge_num <= 1:
                 edges.append(edge_num)
-            else: print("VALUE ERROR EDGE: OUTSIDE RANGE", edge_num)
+            #else: print("VALUE ERROR EDGE: OUTSIDE RANGE", edge_num)
             if -1 <= lane_num <= 1:
                 lanes.append(lane_num)
-            else: print("VALUE ERROR LANE: OUTSIDE RANGE", lane_num)
+            #else: print("VALUE ERROR LANE: OUTSIDE RANGE", lane_num)
             
             r = r/max_length
             v = v/max_speed
             if type(r) is int or type(r) is float or type(r) is long:
                 if -1 <= r <= 1:
                     pos.append(r)
-                else: print("VALUE ERROR POS: OUTSIDE RANGE", r)
-            else: print("TYPE ERROR POS", r)
+                #else: print("VALUE ERROR POS: OUTSIDE RANGE", r)
+            #else: print("TYPE ERROR POS", r)
             if type(v) is int or type(v) is float or type(v) is long:
                 if -1 <= v <= 1:
                     vel.append(v)
-                else: print("VALUE ERROR VEL: OUTSIDE RANGE", v)
-            else: print("TYPE ERROR VEL", v)
+                #else: print("VALUE ERROR VEL: OUTSIDE RANGE", v)
+            #else: print("TYPE ERROR VEL", v)
             
 
-        # the speeds and positions are concatenated to produce the state
-        if(len(np.concatenate((pos,vel,edges,lanes,types)))>5000): print("STATE EXCEEDS OSBERVATION SIZE")
-        len_zeros = 5000-len(np.concatenate((pos,vel,edges,lanes,types)))
-        zeros = np.zeros(len_zeros)
+        for i in range(4):
+            if(lane_traffic[i] != 0): lane_traffic_speed[i] = (lane_traffic_speed[i]/lane_traffic[i])
+            else: lane_traffic_speed[i] = 0
+            lane_traffic[i] = lane_traffic[i] / len(ids)
 
-        return np.concatenate((pos,vel,edges,lanes,types,zeros))
+        state = np.concatenate((pos,vel,edges,lanes,
+                                types,follower_dx,follower_dv,leader_dv,leader_dx,
+                                lane_traffic,lane_traffic_speed))
+        
+        #if(np.max(state) > 1 or np.min(state) < -1 or len(state) != 108): print("ERROR IN STATE")
+            
+        return state
 
     def compute_reward(self, rl_actions, **kwargs):
         ids = self.k.vehicle.get_ids()

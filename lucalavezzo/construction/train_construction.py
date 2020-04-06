@@ -1,37 +1,28 @@
+import os
 import json
 import ray
+import numpy as np
 from ray.rllib.agents.registry import get_agent_class
 from ray.tune import run_experiments
 from ray.tune.registry import register_env
-import numpy as np
+from flow.networks import Network
 from flow.networks.ring import RingNetwork, ADDITIONAL_NET_PARAMS
 from flow.utils.registry import make_create_env
 from flow.utils.rllib import FlowParamsEncoder
-from flow.core.params import SumoParams, EnvParams, InitialConfig, NetParams
-from flow.core.params import VehicleParams, SumoCarFollowingParams
-from flow.controllers import RLController, IDMController, ContinuousRouter
+from flow.core.params import SumoParams, EnvParams, InitialConfig, NetParams, VehicleParams, SumoCarFollowingParams, InFlows, SumoLaneChangeParams
+from flow.controllers import RLController, IDMController, SimLaneChangeController
 from gym.spaces.box import Box
 from gym.spaces import Tuple
-from flow.core.params import InFlows
-from flow.controllers import SimLaneChangeController
-from flow.networks import Network
-import os
+
 from constructionRouter import ConstructionRouter
-from flow.core.params import SumoLaneChangeParams
-
-from env_constructionV4_padding import myEnv
-
-ADDITIONAL_ENV_PARAMS = {
-    "max_accel": 2,
-    "max_decel": 2,
-}
+from constructionEnvV2 import myEnv
 
 # time horizon of a single rollout
 HORIZON = 5000
 # number of rollouts per training iteration
 N_ROLLOUTS = 10
 # number of parallel workers
-N_CPUS = 2
+N_CPUS = 10
 
 vehicles = VehicleParams()
 vehicles.add("rl",
@@ -54,7 +45,7 @@ vehicles.add("human",
 
 # specify the edges vehicles can originate on
 initial_config = InitialConfig(
-    edges_distribution=["gneE43"]
+    edges_distribution=["edge4"]
 )
 
 # specify the routes for vehicles in the network
@@ -62,14 +53,15 @@ class Network(Network):
 
     def specify_routes(self, net_params):
         return {
-                "gneE43": ["gneE43","gneE4.264","gneE4.264.110","gneE8","gneE9","gneE9.252","gneE33"],
-               "gneE8": ["gneE8","gneE9","gneE37","gneE38","gneE39","gneE4.264.110","gneE8"]
-               }
+                "edge1": ["edge1","edge2","edge3","edge4","edge5","edge6"],
+                #"edge3": ["edge3","edge4","edge5","edge10","edge11","edge12","edge3"],
+                "edge4": ["edge4","edge5","edge10","edge11","edge12","edge3","edge4"],
+                }
 
 
 inflow = InFlows()
 inflow.add(veh_type="human",
-           edge="gneE43",
+           edge="edge1",
            vehs_per_hour=10000,
             depart_lane="random",
             depart_speed="random",
@@ -77,7 +69,7 @@ inflow.add(veh_type="human",
 
 file_dir = "/home/llavezzo/"
 net_params = NetParams(
-    template="/mnt/c/Users/llave/Documents/GitHub/flow_osuphysics/lucalavezzo/constructionV4.net.xml",
+    template="/mnt/c/Users/llave/Documents/GitHub/flow_osuphysics/lucalavezzo/construction/constructionV5.net.xml",
     inflows=inflow
 )
 
@@ -98,7 +90,7 @@ flow_params = dict(
     sim=SumoParams(
         sim_step=0.5,
         render=False,
-        restart_instance=True
+        restart_instance=True,
     ),
 
     # environment related parameters (see flow.core.params.EnvParams)
@@ -111,6 +103,7 @@ flow_params = dict(
             "sort_vehicles": False,
             "max_accel": 2,
             "max_decel": 2,
+            "lane_change_duration": 5,
         },
     ),
 
@@ -147,7 +140,7 @@ def setup_exps():
     config["num_workers"] = N_CPUS
     config["train_batch_size"] = HORIZON * N_ROLLOUTS
     config["gamma"] = 0.999  # discount rate
-    config["model"].update({"fcnet_hiddens": [16, 16, 16, 16]})
+    config["model"].update({"fcnet_hiddens": [32, 32, 32, 32]})
     config["use_gae"] = True
     config["lambda"] = 0.97
     config["kl_target"] = 0.02

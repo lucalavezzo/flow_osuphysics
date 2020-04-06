@@ -11,7 +11,7 @@ class ConstructionRouter(ContinuousRouter):
 
         edge = env.k.vehicle.get_edge(self.veh_id)
 
-        if edge == "edge3":
+        if edge == "edge4":
             new_route = env.available_routes[edge][0][0]
         else:
             new_route = super().choose_route(env)

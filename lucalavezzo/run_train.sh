@@ -1,6 +1,6 @@
 #PBS -N train_merge
 #PBS -l walltime=8:00:00
-#PBS -l nodes=1:ppn=40
+#PBS -l nodes=1:ppn=15
 #PBS -l mem=5000MB
 #PBS -j oe
 
