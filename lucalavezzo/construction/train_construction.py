@@ -18,7 +18,7 @@ from constructionRouter import ConstructionRouter
 from constructionEnvV2 import myEnv
 
 # time horizon of a single rollout
-HORIZON = 5000
+HORIZON = 100 #5000
 # number of rollouts per training iteration
 N_ROLLOUTS = 10
 # number of parallel workers

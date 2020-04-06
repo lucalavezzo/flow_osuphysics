@@ -140,56 +140,76 @@ class myEnv(Env):
             if leader_id in ["", None]:
                 leader_dv.append(1)
                 leader_dx.append(1)
-                types.append(-1)
+                types.append(0)
             else:
-                if -1 <= self.k.vehicle.get_speed(leader_id)/max_speed <= 1:
-                    leader_dv.append(self.k.vehicle.get_speed(leader_id)/max_speed)
+                leader_pos = (self.k.vehicle.get_x_by_id(leader_id) - self.k.vehicle.get_x_by_id(rl_id))/max_length
+                leader_speed = self.k.vehicle.get_speed(leader_id)/max_speed
+
+                if -1 <= leader_speed <= 1:
+                    leader_dv.append(leader_speed)
                 else: 
                     #print("VALUE ERROR LEADER_DV: OUTSIDE RANGE", self.k.vehicle.get_speed(leader_id), leader_id)
                     leader_dv.append(0)
 
-                leader_dx.append((self.k.vehicle.get_x_by_id(leader_id) - self.k.vehicle.get_x_by_id(rl_id))/max_length)
+                if -1 <= leader_pos <= 1:
+                    leader_dx.append(leader_pos)
+                else: 
+                    #print("VALUE ERROR LEADER_DX: OUTSIDE RANGE", leader_speed, leader_id)
+                    leader_dx.append(0)
+
                 if(rl_id in rl_ids): types.append(1)
-                else: types.append(0)
+                else: types.append(-1)
 
             if follower_id in ["",None]:
                 follower_dv.append(1)
                 follower_dx.append(1)
-                types.append(-1)
+                types.append(0)
             else:
-                if -1 <= self.k.vehicle.get_speed(follower_id)/max_speed <= 1:
-                    follower_dv.append(self.k.vehicle.get_speed(follower_id)/max_speed)
+                follower_pos = (self.k.vehicle.get_x_by_id(rl_id) - self.k.vehicle.get_x_by_id(follower_id))/max_length
+                follower_speed = self.k.vehicle.get_speed(follower_id)/max_speed
+
+                if -1 <= follower_speed <= 1:
+                    follower_dv.append(follower_speed)
                 else: 
                     #print("VALUE ERROR FOLLOWER_DV: OUTSIDE RANGE", self.k.vehicle.get_speed(follower_id), follower_id)
                     follower_dv.append(0)
                  
-                follower_dx.append((self.k.vehicle.get_x_by_id(rl_id) - self.k.vehicle.get_x_by_id(follower_id))/max_length)
+                if -1 <= follower_pos <= 1:
+                    follower_dx.append(follower_pos)
+                else: 
+                    #print("VALUE ERROR FOLLOWER_DV: OUTSIDE RANGE", self.k.vehicle.get_speed(follower_id), follower_id)
+                    follower_dx.append(0)
+
                 if(rl_id in rl_ids): types.append(1)
-                else: types.append(0)
+                else: types.append(-1)
 
 
             edge_num = int(edge_num)/MAX_EDGE
             lane_num = int(lane_num)/MAX_LANE
             if -1 <= edge_num <= 1:
                 edges.append(edge_num)
-            #else: print("VALUE ERROR EDGE: OUTSIDE RANGE", edge_num)
+            else: 
+                #print("VALUE ERROR EDGE: OUTSIDE RANGE", edge_num)
+                edge.append(0)
             if -1 <= lane_num <= 1:
                 lanes.append(lane_num)
-            #else: print("VALUE ERROR LANE: OUTSIDE RANGE", lane_num)
-            
+            else: 
+                #print("VALUE ERROR LANE: OUTSIDE RANGE", lane_num)
+                lanes.append(0)
+
             r = r/max_length
             v = v/max_speed
-            if type(r) is int or type(r) is float or type(r) is long:
-                if -1 <= r <= 1:
-                    pos.append(r)
-                #else: print("VALUE ERROR POS: OUTSIDE RANGE", r)
-            #else: print("TYPE ERROR POS", r)
-            if type(v) is int or type(v) is float or type(v) is long:
-                if -1 <= v <= 1:
-                    vel.append(v)
-                #else: print("VALUE ERROR VEL: OUTSIDE RANGE", v)
-            #else: print("TYPE ERROR VEL", v)
             
+            if -1 <= r <= 1:
+                pos.append(r)
+            else:
+                pos.append(0)
+
+            if -1 <= v <= 1:
+                vel.append(v)
+            else:
+                vel.append(0)
+
 
         for i in range(4):
             if(lane_traffic[i] != 0): lane_traffic_speed[i] = (lane_traffic_speed[i]/lane_traffic[i])
