@@ -1,0 +1,17 @@
+/users/PAS1585/llavez99/work/rl_flow/flow_osuphysics/lucalavezzo
+****** p0195.ten.osc.edu: Excessive memory usage detected; job may have failed. ******
+
+-----------------------
+Resources requested:
+nodes=1:ppn=15
+mem=5000mb
+-----------------------
+Resources used:
+cput=28:21:46
+walltime=02:55:25
+mem=4.702GB
+vmem=351.026GB
+-----------------------
+Resource units charged (estimate):
+4.385 RUs
+-----------------------

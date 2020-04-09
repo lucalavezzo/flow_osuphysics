@@ -58,7 +58,7 @@ def plot_progress(filepath, columns):
     for col_name, values in data.items():
         plt.plot(values, label=col_name)
     plt.legend()
-    plt.savefig('/mnt/c/Users/llave/Desktop/test.png')
+    plt.savefig('test.png')
     plt.show()
 
 

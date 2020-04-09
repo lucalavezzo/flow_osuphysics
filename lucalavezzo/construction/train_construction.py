@@ -18,7 +18,7 @@ from constructionRouter import ConstructionRouter
 from constructionEnvV2 import myEnv
 
 # time horizon of a single rollout
-HORIZON = 100 #5000
+HORIZON = 5000 #5000
 # number of rollouts per training iteration
 N_ROLLOUTS = 10
 # number of parallel workers
@@ -69,7 +69,7 @@ inflow.add(veh_type="human",
 
 file_dir = "/home/llavezzo/"
 net_params = NetParams(
-    template="/mnt/c/Users/llave/Documents/GitHub/flow_osuphysics/lucalavezzo/construction/constructionV5.net.xml",
+    template="/users/PAS1585/llavez99/work/rl_flow/flow_osuphysics/lucalavezzo/construction/constructionV5.net.xml",
     inflows=inflow
 )
 
