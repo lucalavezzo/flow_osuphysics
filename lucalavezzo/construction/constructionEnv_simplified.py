@@ -22,7 +22,7 @@ ADDITIONAL_ENV_PARAMS = {
 }
 
 MAX_EDGE = 12
-MAX_LANE = 4
+MAX_LANE = 2
 observation_edges = [2,3,4,5]
 
 class myEnv(Env):
@@ -45,7 +45,7 @@ class myEnv(Env):
             low=-1,
             high=1,
             #shape=(2*self.initial_vehicles.num_vehicles,),
-            shape=(10*10+8,),
+            shape=(10*8+8,),
             dtype=np.float32
         )
 
@@ -233,7 +233,9 @@ class myEnv(Env):
         for veh_id in ids: 
             edge = self.k.vehicle.get_edge(veh_id)
             if edge == "edge3" or edge == "edge4":
-                targetSpeeds.append(self.k.vehicle.get_speed(veh_id))
+                speed = self.k.vehicle.get_speed(veh_id)
+                if abs(speed) > 10000: continue
+                targetSpeeds.append(speed)
 
         if(len(targetSpeeds)==0): return 0
 
