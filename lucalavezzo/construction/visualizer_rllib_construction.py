@@ -212,11 +212,11 @@ def visualizer_rllib(args):
             targetSpeeds = []
             ids = vehicles.get_ids()
             for veh_id in ids: 
-            edge = self.env.k.vehicle.get_edge(veh_id)
-            if edge == "edge3" or edge == "edge4":
-                speed = self.env.k.vehicle.get_speed(veh_id)
-                if abs(speed) > 10000: continue
-                targetSpeeds.append(speed)
+                edge = self.env.k.vehicle.get_edge(veh_id)
+                if edge == "edge3" or edge == "edge4":
+                    speed = self.env.k.vehicle.get_speed(veh_id)
+                    if abs(speed) > 10000: continue
+                    targetSpeeds.append(speed)
             if(len(targetSpeeds)==0): meanSpeeds = 0
             else: meanSpeeds = np.mean(targetSpeeds)
 
