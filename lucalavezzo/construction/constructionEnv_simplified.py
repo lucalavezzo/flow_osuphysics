@@ -227,7 +227,6 @@ class myEnv(Env):
     def compute_reward(self, rl_actions, **kwargs):
         ids = self.k.vehicle.get_ids()
         speeds = self.k.vehicle.get_speed(ids)
-
         #Only count speeds of cars in edge prior to the 'construction site'
         targetSpeeds = []
         for veh_id in ids: 
@@ -236,7 +235,16 @@ class myEnv(Env):
                 speed = self.k.vehicle.get_speed(veh_id)
                 if abs(speed) > 10000: continue
                 targetSpeeds.append(speed)
-
-        if(len(targetSpeeds)==0): return 0
-
+        if(len(targetSpeeds)==0): 
+            output = open("/mnt/c/users/llave/Desktop/mean_velocities.txt","a") 
+            output.write(str(0))
+            output.close()
+            return 0
+        else: 
+            meanSpeeds = np.mean(targetSpeeds)
+            output = open("/mnt/c/users/llave/Desktop/mean_velocities.txt","a") 
+            output.write(str(meanSpeeds))
+            output.close()
+            print(meanSpeeds)
+            
         return np.mean(targetSpeeds)
