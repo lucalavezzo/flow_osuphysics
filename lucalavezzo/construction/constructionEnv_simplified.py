@@ -45,7 +45,7 @@ class myEnv(Env):
             low=-1,
             high=1,
             #shape=(2*self.initial_vehicles.num_vehicles,),
-            shape=(10*8+8,),
+            shape=(10*10+8,),
             dtype=np.float32
         )
 
@@ -236,15 +236,6 @@ class myEnv(Env):
                 if abs(speed) > 10000: continue
                 targetSpeeds.append(speed)
         if(len(targetSpeeds)==0): 
-            #output = open("/mnt/c/users/llave/Desktop/mean_velocities.txt","a") 
-            #output.write(str(0))
-            #output.close()
             return 0
-        else: 
-            meanSpeeds = np.mean(targetSpeeds)
-            #output = open("/mnt/c/users/llave/Desktop/mean_velocities.txt","a") 
-            #output.write(str(meanSpeeds))
-            #output.close()
-            #print(meanSpeeds)
             
         return np.mean(targetSpeeds)

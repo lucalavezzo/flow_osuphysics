@@ -27,12 +27,11 @@ N_CPUS = 10
 vehicles = VehicleParams()
 vehicles.add("rl",
              acceleration_controller=(RLController, {}),
-             lane_change_controller=(SimLaneChangeController, {}),
              routing_controller=(ConstructionRouter, {}),
              car_following_params=SumoCarFollowingParams(
                  speed_mode="obey_safe_speed",  
              ),
-             num_vehicles=8
+             num_vehicles=10
              )
 vehicles.add("human",
              acceleration_controller=(IDMController, {}),
@@ -62,7 +61,7 @@ class Network(Network):
 inflow = InFlows()
 inflow.add(veh_type="human",
            edge="edge1",
-           vehs_per_hour=2000,
+           vehs_per_hour=1700,
             depart_lane="random",
             depart_speed="random",
             color="white")
@@ -101,9 +100,9 @@ flow_params = dict(
         additional_params={
             "target_velocity": 50,
             "sort_vehicles": False,
-            "max_accel": 2,
-            "max_decel": 2,
-            "lane_change_duration": 5,
+            "max_accel": 3,
+            "max_decel": 3,
+            "lane_change_duration": 3,
         },
     ),
 
@@ -140,7 +139,7 @@ def setup_exps():
     config["num_workers"] = N_CPUS
     config["train_batch_size"] = HORIZON * N_ROLLOUTS
     config["gamma"] = 0.999  # discount rate
-    config["model"].update({"fcnet_hiddens": [32, 32, 32, 32]})
+    config["model"].update({"fcnet_hiddens": [32]*10})
     config["use_gae"] = True
     config["lambda"] = 0.97
     config["kl_target"] = 0.02
