@@ -212,9 +212,9 @@ def visualizer_rllib(args):
             targetSpeeds = []
             ids = vehicles.get_ids()
             for veh_id in ids: 
-                edge = self.env.k.vehicle.get_edge(veh_id)
+                edge = env.k.vehicle.get_edge(veh_id)
                 if edge == "edge3" or edge == "edge4":
-                    speed = self.env.k.vehicle.get_speed(veh_id)
+                    speed = env.k.vehicle.get_speed(veh_id)
                     if abs(speed) > 10000: continue
                     targetSpeeds.append(speed)
             if(len(targetSpeeds)==0): meanSpeeds.append(0)
@@ -311,7 +311,7 @@ def visualizer_rllib(args):
                                         np.std(throughput_efficiency)))
 
     print("MEAN SPEEDS")
-    print(meanSpeeds)
+    print(np.mean(meanSpeeds))
     # terminate the environment
     env.unwrapped.terminate()
 

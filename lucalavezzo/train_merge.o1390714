@@ -1,0 +1,17 @@
+/users/PAS1585/llavez99/work/rl_flow/flow_osuphysics/lucalavezzo
+=>> PBS: job killed: walltime 28830 exceeded limit 28800
+****** p0133.ten.osc.edu: Excessive memory usage detected; job may have failed. ******
+
+-----------------------
+Resources requested:
+nodes=1:ppn=15
+mem=5000mb
+-----------------------
+Resources used:
+cput=75:53:29
+walltime=08:00:40
+mem=4.518GB
+vmem=338.460GB
+-----------------------
+Resource units charged (estimate):
+-----------------------

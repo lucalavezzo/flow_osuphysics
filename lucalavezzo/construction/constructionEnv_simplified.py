@@ -236,15 +236,15 @@ class myEnv(Env):
                 if abs(speed) > 10000: continue
                 targetSpeeds.append(speed)
         if(len(targetSpeeds)==0): 
-            output = open("/mnt/c/users/llave/Desktop/mean_velocities.txt","a") 
-            output.write(str(0))
-            output.close()
+            #output = open("/mnt/c/users/llave/Desktop/mean_velocities.txt","a") 
+            #output.write(str(0))
+            #output.close()
             return 0
         else: 
             meanSpeeds = np.mean(targetSpeeds)
-            output = open("/mnt/c/users/llave/Desktop/mean_velocities.txt","a") 
-            output.write(str(meanSpeeds))
-            output.close()
-            print(meanSpeeds)
+            #output = open("/mnt/c/users/llave/Desktop/mean_velocities.txt","a") 
+            #output.write(str(meanSpeeds))
+            #output.close()
+            #print(meanSpeeds)
             
         return np.mean(targetSpeeds)

@@ -1,0 +1,16 @@
+/users/PAS1585/llavez99/work/rl_flow/flow_osuphysics/lucalavezzo
+
+-----------------------
+Resources requested:
+nodes=1:ppn=15
+mem=5000mb
+-----------------------
+Resources used:
+cput=00:43:40
+walltime=00:40:03
+mem=0.811GB
+vmem=95.237GB
+-----------------------
+Resource units charged (estimate):
+1.001 RUs
+-----------------------

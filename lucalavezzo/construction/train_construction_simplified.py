@@ -22,7 +22,7 @@ HORIZON = 5000 #5000
 # number of rollouts per training iteration
 N_ROLLOUTS = 10
 # number of parallel workers
-N_CPUS = 1
+N_CPUS = 10
 
 vehicles = VehicleParams()
 vehicles.add("rl",
@@ -62,14 +62,14 @@ class Network(Network):
 inflow = InFlows()
 inflow.add(veh_type="human",
            edge="edge1",
-           vehs_per_hour=3000,
+           vehs_per_hour=2000,
             depart_lane="random",
             depart_speed="random",
             color="white")
 
 file_dir = "/home/llavezzo/"
 net_params = NetParams(
-    template="/mnt/c/users/llave/Documents/GitHub/flow_osuphysics/lucalavezzo/construction/constructionV6.net.xml",
+    template="/users/PAS1585/llavez99/work/rl_flow/flow_osuphysics/lucalavezzo/construction/constructionV6.net.xml",
     inflows=inflow
 )
 
