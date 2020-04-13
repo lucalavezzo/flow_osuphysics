@@ -1,0 +1,16 @@
+/users/PAS1585/llavez99/work/rl_flow/flow_osuphysics/lucalavezzo
+=>> PBS: job killed: walltime 28817 exceeded limit 28800
+
+-----------------------
+Resources requested:
+nodes=1:ppn=15
+mem=10gb
+-----------------------
+Resources used:
+cput=76:00:51
+walltime=08:00:17
+mem=5.162GB
+vmem=350.136GB
+-----------------------
+Resource units charged (estimate):
+-----------------------

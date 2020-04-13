@@ -15,7 +15,7 @@ from gym.spaces.box import Box
 from gym.spaces import Tuple
 
 from constructionRouter import ConstructionRouter
-from constructionEnv_simplified import myEnv
+from constructionEnv_simplifiedV2 import myEnv
 
 # time horizon of a single rollout
 HORIZON = 5000 #5000
@@ -31,7 +31,7 @@ vehicles.add("rl",
              car_following_params=SumoCarFollowingParams(
                  speed_mode="obey_safe_speed",  
              ),
-             num_vehicles=10
+             num_vehicles=8
              )
 vehicles.add("human",
              acceleration_controller=(IDMController, {}),
@@ -139,7 +139,7 @@ def setup_exps():
     config["num_workers"] = N_CPUS
     config["train_batch_size"] = HORIZON * N_ROLLOUTS
     config["gamma"] = 0.999  # discount rate
-    config["model"].update({"fcnet_hiddens": [32]*10})
+    config["model"].update({"fcnet_hiddens": [128]*10})
     config["use_gae"] = True
     config["lambda"] = 0.97
     config["kl_target"] = 0.02

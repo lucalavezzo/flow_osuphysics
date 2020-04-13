@@ -1,7 +1,7 @@
-#PBS -N train_merge
+#PBS -N train_construction
 #PBS -l walltime=8:00:00
 #PBS -l nodes=1:ppn=15
-#PBS -l mem=5000MB
+#PBS -l mem=10GB
 #PBS -j oe
 
 # uncomment if using qsub
