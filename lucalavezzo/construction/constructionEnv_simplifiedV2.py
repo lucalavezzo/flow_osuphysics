@@ -30,13 +30,13 @@ class myEnv(Env):
 
     @property
     def action_space(self):
-        num_actions = self.initial_vehicles.num_rl_vehicles
+        num_actions = self.initial_vehicles.num_rl_vehicles*2
         
         max_decel = self.env_params.additional_params["max_decel"]
         max_accel = self.env_params.additional_params["max_accel"]
 
-        lb = [-abs(max_decel), -1] * num_actions
-        ub = [max_accel, 1] * num_actions
+        lb = [-abs(max_decel), -1] * num_actions 
+        ub = [max_accel, 1] * num_actions 
 
         return Box(np.array(lb), np.array(ub), dtype=np.float32)
 
