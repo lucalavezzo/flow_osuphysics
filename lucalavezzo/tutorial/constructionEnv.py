@@ -13,6 +13,7 @@ from flow.controllers import RLController, IDMController, ContinuousRouter
 from gym.spaces.box import Box
 from gym.spaces import Tuple
 from flow.envs import Env
+from flow.core import rewards
 
 
 ADDITIONAL_ENV_PARAMS = {
@@ -29,7 +30,7 @@ class myEnv(Env):
 
     @property
     def action_space(self):
-        num_actions = self.initial_vehicles.num_rl_vehicles
+        num_actions = self.initial_vehicles.num_rl_vehicles*2
         
         max_decel = self.env_params.additional_params["max_decel"]
         max_accel = self.env_params.additional_params["max_accel"]
@@ -45,7 +46,7 @@ class myEnv(Env):
             low=-1,
             high=1,
             #shape=(2*self.initial_vehicles.num_vehicles,),
-            shape=(10*8+8,),
+            shape=(10*8+4,),
             dtype=np.float32
         )
 
@@ -105,9 +106,9 @@ class myEnv(Env):
         leader_dv = []
         leader_dx = []
 
-        #network info (2*4)
-        lane_traffic=[0,0,0,0] 
-        lane_traffic_speed=[0,0,0,0]
+        #network info (2*2)
+        lane_traffic=[0,0] 
+        lane_traffic_speed=[0,0]
 
 
         #Density and average speed of vehicles in lane before construction zone
@@ -117,7 +118,7 @@ class myEnv(Env):
             lane_num = int(self.k.vehicle.get_lane(veh_id))
             v = self.k.vehicle.get_speed(veh_id)
             if(-1 <= v/max_speed <= 1):
-                if(edge_num == "edge3"):
+                if(edge_num == "edge3" or edge_num == "edge2"):
                     lane_traffic[lane_num] += 1
                     lane_traffic_speed[lane_num] += v/max_speed
                 
@@ -211,11 +212,10 @@ class myEnv(Env):
                 vel.append(0)
 
 
-        for i in range(4):
+        for i in range(2):
             if(lane_traffic[i] != 0): lane_traffic_speed[i] = (lane_traffic_speed[i]/lane_traffic[i])
             else: lane_traffic_speed[i] = 0
-            if(len(ids)!=0): lane_traffic[i] = lane_traffic[i] / len(ids)
-            else: lane_traffic[i] = 0
+            lane_traffic[i] = lane_traffic[i] / len(ids)
 
         state = np.concatenate((pos,vel,edges,lanes,
                                 types,follower_dx,follower_dv,leader_dv,leader_dx,
@@ -228,15 +228,31 @@ class myEnv(Env):
     def compute_reward(self, rl_actions, **kwargs):
         ids = self.k.vehicle.get_ids()
         speeds = self.k.vehicle.get_speed(ids)
-        #Only count speeds of cars in edge prior to the 'construction site'
-        targetSpeeds = []
+        rl_ids = self.k.vehicle.get_rl_ids()
+
+        #Only count speeds of human cars in edge prior to the 'construction site'
+        #RL vehicles encouraged to make forward progress
+        meanHumanSpeed = 0
+        meanRLSpeed = 0
+        RL_SPEED_GAIN = 0.1
+        humanSpeeds = []
+        rlSpeeds = []
         for veh_id in ids: 
-            edge = self.k.vehicle.get_edge(veh_id)
-            if edge == "edge3" or edge == "edge4":
+            if veh_id in rl_ids:
                 speed = self.k.vehicle.get_speed(veh_id)
                 if abs(speed) > 10000: continue
-                targetSpeeds.append(speed)
-        if(len(targetSpeeds)==0): 
-            return 0
+                rlSpeeds.append(abs(speed))
+            else:
+                edge = self.k.vehicle.get_edge(veh_id)
+                if edge == "edge2" or edge == "edge3" or edge == "edge4":
+                    speed = self.k.vehicle.get_speed(veh_id)
+                    if abs(speed) > 10000: continue
+                    humanSpeeds.append(speed)
+
+        if(len(humanSpeeds)==0): meanHumanSpeed = 0
+        else: meanHumanSpeed = np.mean(humanSpeeds)
+
+        if(len(rlSpeeds)==0): meanRLSpeed = 0
+        else: meanRLSpeed = np.mean(rlSpeeds)*RL_SPEED_GAIN
             
-        return np.mean(targetSpeeds)
+        return (meanHumanSpeed + meanRLSpeed - abs(rewards.penalize_standstill(self,gain=0.3)))
