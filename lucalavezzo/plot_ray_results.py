@@ -55,10 +55,12 @@ def plot_progress(filepath, columns):
             raise
 
     plt.ion()
+    title = 'plot'
     for col_name, values in data.items():
+        title += "_"+str(col_name)
         plt.plot(values, label=col_name)
     plt.legend()
-    plt.savefig('/mnt/c/users/llave/Desktop/test.png')
+    plt.savefig('/mnt/c/users/llave/Desktop/'+title+'.png')
     plt.show()
 
 
