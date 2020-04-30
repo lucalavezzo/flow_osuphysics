@@ -15,7 +15,7 @@ from gym.spaces.box import Box
 from gym.spaces import Tuple
 
 from constructionRouter import ConstructionRouter
-from constructionEnv_simplified import myEnv
+from constructionEnv_simplifiedV3 import myEnv
 
 # time horizon of a single rollout
 HORIZON = 5000 #5000
@@ -98,11 +98,10 @@ flow_params = dict(
         warmup_steps=1000,
         clip_actions=False,
         additional_params={
-            "target_velocity": 50,
-            "sort_vehicles": False,
+            "target_velocity": 4,
             "max_accel": 3,
             "max_decel": 3,
-            "lane_change_duration": 3,
+            "lane_change_duration": 2,
         },
     ),
 

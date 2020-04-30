@@ -218,7 +218,7 @@ def visualizer_rllib(args):
                 if edge == "edge3" or edge == "edge4":
                     speed = env.k.vehicle.get_speed(veh_id)
                     if abs(speed) > 10000: continue
-                    targetSpeeds.append(abs(speed))
+                    targetSpeeds.append(speed)
             if(len(targetSpeeds)==0): meanSpeeds.append(0)
             else: meanSpeeds.append(np.mean(targetSpeeds))
 

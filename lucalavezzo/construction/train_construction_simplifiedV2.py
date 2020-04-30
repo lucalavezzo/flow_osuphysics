@@ -15,7 +15,7 @@ from gym.spaces.box import Box
 from gym.spaces import Tuple
 
 from constructionRouter import ConstructionRouter
-from constructionEnv_simplified import myEnv
+from constructionEnv_simplifiedV2 import myEnv
 
 # time horizon of a single rollout
 HORIZON = 5000 #5000

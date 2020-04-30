@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Tue Apr 14 16:30:24 2020 by Eclipse SUMO Version v1_1_0+0000-2147d15
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="/users/PAS1585/llavez99/work/rl_flow/flow_osuphysics/lucalavezzo/construction/constructionV6.net.xml"/>
+        <route-files value="/users/PAS1585/llavez99/work/rl_flow/flow/flow/core/kernel/network/debug/cfg/construction_traffic_simplified_20200414-1630231586896223.035643.rou.xml"/>
+        <additional-files value="/users/PAS1585/llavez99/work/rl_flow/flow/flow/core/kernel/network/debug/cfg/construction_traffic_simplified_20200414-1630231586896223.035643.add.xml"/>
+    </input>
+
+    <output>
+        <emission-output value="/users/PAS1585/llavez99/work/rl_flow/flow_osuphysics/lucalavezzo/test_time_rollout/construction_traffic_simplified_20200414-1630231586896223.035643-emission.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <step-length value="0.5"/>
+    </time>
+
+    <processing>
+        <collision.check-junctions value="true"/>
+        <time-to-teleport value="-1"/>
+    </processing>
+
+    <report>
+        <no-step-log value="true"/>
+    </report>
+
+    <traci_server>
+        <remote-port value="57361"/>
+        <num-clients value="1"/>
+    </traci_server>
+
+    <gui_only>
+        <gui-settings-file value="/users/PAS1585/llavez99/work/rl_flow/flow/flow/core/kernel/network/debug/cfg/construction_traffic_simplified_20200414-1630231586896223.035643.gui.cfg"/>
+        <tracker-interval value="0.5"/>
+    </gui_only>
+
+</configuration>
+-->
+
+<emission-export xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/emission_file.xsd">
+    <timestep time="0.00"/>
+    <timestep time="0.50"/>
+</emission-export>
