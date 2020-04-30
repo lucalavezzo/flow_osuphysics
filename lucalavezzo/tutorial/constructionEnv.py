@@ -234,6 +234,7 @@ class myEnv(Env):
         #RL vehicles encouraged to make forward progress
         meanHumanSpeed = 0
         meanRLSpeed = 0
+        HUMAN_SPEED_GAIN = 1
         RL_SPEED_GAIN = 0.1
         humanSpeeds = []
         rlSpeeds = []
@@ -244,15 +245,15 @@ class myEnv(Env):
                 rlSpeeds.append(abs(speed))
             else:
                 edge = self.k.vehicle.get_edge(veh_id)
-                if edge == "edge2" or edge == "edge3" or edge == "edge4":
+                if edge == "edge3" or edge == "edge4":
                     speed = self.k.vehicle.get_speed(veh_id)
                     if abs(speed) > 10000: continue
-                    humanSpeeds.append(speed)
+                    humanSpeeds.append(abs(speed))
 
         if(len(humanSpeeds)==0): meanHumanSpeed = 0
         else: meanHumanSpeed = np.mean(humanSpeeds)
 
         if(len(rlSpeeds)==0): meanRLSpeed = 0
-        else: meanRLSpeed = np.mean(rlSpeeds)*RL_SPEED_GAIN
-            
-        return (meanHumanSpeed + meanRLSpeed - abs(rewards.penalize_standstill(self,gain=0.3)))
+        else: meanRLSpeed = np.mean(rlSpeeds)
+
+        return (meanHumanSpeed*HUMAN_SPEED_GAIN + meanRLSpeed*RL_SPEED_GAIN - abs(rewards.penalize_standstill(self,gain=0.3)))
